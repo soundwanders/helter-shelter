@@ -1,0 +1,32 @@
+{
+  "name": "helter-shelter",
+  "version": "1.0.0",
+  "description": "Helter-Shelter Animal Oasis webpage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soundwanders/helter-shelter.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Animal",
+    "Shelter",
+    "Pets",
+    "Shelter",
+    "Web",
+    "Application",
+    "Web",
+    "Development"
+  ],
+  "author": "soundwanders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soundwanders/helter-shelter/issues"
+  },
+  "homepage": "https://github.com/soundwanders/helter-shelter#readme"
+}
