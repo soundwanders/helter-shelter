@@ -1,5 +1,4 @@
 <p align="center"> <img src="/logo.png" /> </p>
-
 <p align="center">
     <a href="https://github.com/soundwanders/helter-shelter/issues">Report Bug</a>
     .
@@ -18,14 +17,13 @@
   </ol>
 </details>
 
-
-## About 'Helter-Shelter'
-soundwanders .....
+### About 'Helter-Shelter'
+Helter-Shelter Animal Oasis
 
 ### Technology
 - HTML, CSS, JavaScript
 
-## Contributing
+### Contributing
 If you have any ideas, improvements, suggestions or issues with the project please feel free to contribute &smile;
 
 1. Fork the Project
