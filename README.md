@@ -1,4 +1,4 @@
-<p align="center"> <img src="/logo.png" /> </p>
+<p align="center"> <img src="media/logo.png" /> </p>
 <p align="center">
     <a href="https://github.com/soundwanders/helter-shelter/issues">Report Bug</a>
     .
@@ -18,10 +18,11 @@
 </details>
 
 ### About 'Helter-Shelter'
-Helter-Shelter Animal Oasis
+Helter-Shelter Animal Oasis.
 
 ### Technology
 - HTML, CSS, JavaScript
+- CSS Flexbox used to create a responsive, fluid page design.
 
 ### Contributing
 If you have any ideas, improvements, suggestions or issues with the project please feel free to contribute &smile;
