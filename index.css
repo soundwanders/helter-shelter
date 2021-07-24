@@ -6,11 +6,12 @@ html, body {
     overflow-x: hidden;
 }
 
+/* forces a line break in flex layout */
 .flexBreak {
     display: flex;
     flex-basis: 100%;
     height: 0;
-  }
+}
 
 ul {
     list-style-type: none;
@@ -25,13 +26,14 @@ li {
     display: flex;
     float: left;
     margin: 0 1%;
-    font-size: 24px;
-    line-height: 1.5em;
+    font-size: 3vh;
+    line-height: 5vh;
 }
 
 #navLogo {
-    height: 1.5em;
-    float: left;
+    height: 5vh;
+    padding: 0;
+    margin: 0;
 }
 
 /* banner image...Helter-Shelter title with pet logos */
@@ -50,7 +52,7 @@ li {
 .flexContainer {
     display: flex;
     width: 100%;
-    height: 50%;
+    height: 30%;
     margin: 0 auto;
 }
 
