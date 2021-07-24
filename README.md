@@ -32,3 +32,6 @@ If you have any ideas, improvements, suggestions or issues with the project plea
 3. Commit your Changes (`git commit -m 'Hey change this!'`)
 4. Push to the Branch (`git push origin update/BugSquash`)
 5. Open a Pull Request
+
+### License
+<a href="https://mit-license.org/" rel="noopener noreferral" style="text-decoration: none;">The MIT License (MIT)</a>
