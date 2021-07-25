@@ -27,80 +27,65 @@
         <div id="navbar">
             <ul>
                 <li class="navItem" id="navLogo"><img src="media/navLogo.png" /></li>
-                <li class="navItem" id="home">Home</li>
-                <li class="navItem" id="staff">Staff</li>
-                <li class="navItem" id="shelter">Shelter</li>
-                <li class="navItem" id="pets">Pets</li>
                 <li class="navItem" id="contact">Contact</li>
+                <li class="navItem" id="appointment">Request Appointment</li>
+                <li class="navItem" id="shelter">Shelter Map</li>
+                <li class="navItem" id="about">About</li>
+                <li class="navItem" id="home">Home</li>
             </ul>
         </div>
     </header>
 
     <body>
         <div class="bannerContainer">
-            <img class="bannerImage" src="media/helter.png" alt="Banner Image" />
+            <img class="bannerImage" src="/media/banner.png" alt="Banner Image" />
         </div>
 
         <div class="flexContainer">
-            <div class="mainContent">
-                <div id="mapid"></div>
-                <script>
-                var mymap = L.map('mapid').setView([43.01557156507228, -71.4899410452668], 13);
-                
-                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                    maxZoom: 18,
-                    id: 'mapbox/streets-v11',
-                    tileSize: 512,
-                    zoomOffset: -1,
-                    accessToken: 'pk.eyJ1Ijoic291bmR3YW5kZXJzIiwiYSI6ImNrcmpsZmFkaTcwcWEzMW10MXBpbXdrdTMifQ.BCHaQ4HmyW_TKhwQsxRbAQ'
-                }).addTo(mymap);
-                </script>
-            </div>
-
-        </div>
-
-        <div class="flexBreak"></div>
-
-        <div class="cardContainer">
-            <div class="cardContent">
-                <p>lorem borum zzz</p>
-            </div>
-
-            <div class="cardContent">
-                <p>lorem borum zzz</p>
-            </div>
-
-            <div class="cardContent">
-                <p>lorem borum zzz</p>
-            </div>
-
-            <div class="cardContent">
-                <p>lorem borum zzz</p>
+            <div class="cardContainer">
+                <div class="cardContent">
+                    <p>lorem borum zzz</p>
+                </div>
+    
+                <div class="cardContent">
+                    <p>lorem borum zzz</p>
+                </div>
+    
+                <div class="cardContent">
+                    <p>lorem borum zzz</p>
+                </div>
+    
+                <div class="cardContent">
+                    <p>lorem borum zzz</p>
+                </div>
             </div>
         </div>
 
-            <div class="subContent">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Vestibulum laoreet lacinia lorem in pharetra dolamas.
-                Aliquam sodales quam massa, at sollicitudin nisi fringilla. 
-                Nullam mattis nulla malesuada felis gravida pharetra. 
-                Phasellus velit urna, aliquet nec bibendum volutpat vitae ex. 
-                Cras egestas elit non sapien tincidunt, vel luctus metus semper. 
-                Nulla mattis eu ligula ut blandit. Phasellus tempor, mi a viverra 
-                maximus, nibh felis vestibulum mauris, vel elementum arcu magna
-                sit amet neque. Suspendisse vel vestibulum lacus. Vivamus sed 
-                quam tortor. Aliquam hendrerit sit amet elit et egestas. 
-                Nulla nec magna vel leo maximus aliquet viverra ac dolor. 
+            <div class="mapContainer">
+                <div id="map-id"></div>
+                <script src="map.js"></script>
             </div>
 
-        <script src="index.js"></script>
+
+        <div class="subContent">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Vestibulum laoreet lacinia lorem in pharetra dolamas.
+            Aliquam sodales quam massa, at sollicitudin nisi fringilla. 
+            Nullam mattis nulla malesuada felis gravida pharetra. 
+            Phasellus velit urna, aliquet nec bibendum volutpat vitae ex. 
+            Cras egestas elit non sapien tincidunt, vel luctus metus semper. 
+            Nulla mattis eu ligula ut blandit. Phasellus tempor, mi a viverra 
+            maximus, nibh felis vestibulum mauris, vel elementum arcu magna
+            sit amet neque. Suspendisse vel vestibulum lacus. Vivamus sed 
+            quam tortor. Aliquam hendrerit sit amet elit et egestas. 
+            Nulla nec magna vel leo maximus aliquet viverra ac dolor. 
+        </div>
 
     </body>
 
 
     <footer>
-        <ul class="pageFooter">
+        <ul class="footerLogos">
             <li class="footerLink">
                 <a href="https://www.facebook.com" link="noopener noreferral"> <img class="icons" src="media/facebook.svg" alt="Facebook Logo" /> </a>
             </li>
@@ -116,8 +101,7 @@
             <li class="footerLink">
                 <a href="https://twitter.com" link="noopener noreferral"> <img class="icons" src="media/twitter.svg" alt="Twitter Logo" /> </a>
             </li>
-
-        </div>
+        </ul>
     </footer>
 
 </html>
