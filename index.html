@@ -6,20 +6,27 @@
         <meta property="title" content="Helter-Shelter"/>
         <meta name="author" content="soundwanders"/>
         <meta name="description" content="Helter-Shelter Animal Oasis"/>
-<!--     
-        <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png"/>
-        <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png"/>
-        <link rel="icon" type="image/ico" href="assets/favicon/favicon.ico"/> 
--->
 
-        <link rel="stylesheet" href="/index.css" type="text/css"></script>
-    
+        <link rel="icon" type="image/png" href="media/favicon.png"/>
+        <link rel="icon" type="image/ico" href="media/favicon.ico"/>
+
+        <link rel="stylesheet" href="index.css" type="text/css"/>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+        </script>
+
     </head>
 
     <header>
         <div id="navbar">
             <ul>
-                <li class="navItem" id="navLogo"><img src="/media/navLogo.png" /></li>
+                <li class="navItem" id="navLogo"><img src="media/navLogo.png" /></li>
                 <li class="navItem" id="home">Home</li>
                 <li class="navItem" id="staff">Staff</li>
                 <li class="navItem" id="shelter">Shelter</li>
@@ -31,23 +38,26 @@
 
     <body>
         <div class="bannerContainer">
-            <img class="bannerImage" src="/media/helter.png" alt="Banner Image" />
+            <img class="bannerImage" src="media/helter.png" alt="Banner Image" />
         </div>
 
         <div class="flexContainer">
             <div class="mainContent">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Vestibulum laoreet lacinia lorem in pharetra dolamas.
-                Aliquam sodales quam massa, at sollicitudin nisi fringilla. 
-                Nullam mattis nulla malesuada felis gravida pharetra. 
-                Phasellus velit urna, aliquet nec bibendum volutpat vitae ex.
-                Cras egestas elit non sapien tincidunt, vel luctus metus semper. 
-                Nulla mattis eu ligula ut blandit. Phasellus tempor, mi a viverra 
-                maximus, nibh felis vestibulum mauris, vel elementum arcu magna
-                sit amet neque. Suspendisse vel vestibulum lacus. Vivamus sed 
-                quam tortor. Aliquam hendrerit sit amet elit et egestas. 
-                Nulla nec magna vel leo maximus aliquet viverra ac dolor. 
+                <div id="mapid"></div>
+                <script>
+                var mymap = L.map('mapid').setView([43.01557156507228, -71.4899410452668], 13);
+                
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    maxZoom: 18,
+                    id: 'mapbox/streets-v11',
+                    tileSize: 512,
+                    zoomOffset: -1,
+                    accessToken: 'pk.eyJ1Ijoic291bmR3YW5kZXJzIiwiYSI6ImNrcmpsZmFkaTcwcWEzMW10MXBpbXdrdTMifQ.BCHaQ4HmyW_TKhwQsxRbAQ'
+                }).addTo(mymap);
+                </script>
             </div>
+
         </div>
 
         <div class="flexBreak"></div>
@@ -83,29 +93,31 @@
                 quam tortor. Aliquam hendrerit sit amet elit et egestas. 
                 Nulla nec magna vel leo maximus aliquet viverra ac dolor. 
             </div>
+
+        <script src="index.js"></script>
+
     </body>
 
 
     <footer>
         <ul class="pageFooter">
             <li class="footerLink">
-                <a href="https://www.facebook.com" link="noopener noreferral"> <img class="icons" src="/media/facebook.svg" alt="Facebook Logo" /> </a>
+                <a href="https://www.facebook.com" link="noopener noreferral"> <img class="icons" src="media/facebook.svg" alt="Facebook Logo" /> </a>
             </li>
 
             <li class="footerLink">
-                <a href="https://github.com" link="noopener noreferral"> <img class="icons" src="/media/github.svg" alt="Github Logo" /> </a>
+                <a href="https://github.com" link="noopener noreferral"> <img class="icons" src="media/github.svg" alt="Github Logo" /> </a>
             </li>
 
             <li class="footerLink">
-                <a href="https://www.instagram.com" link="noopener noreferral"> <img class="icons" src="/media/instagram.svg" alt="Instagram Logo" /> </a>
+                <a href="https://www.instagram.com" link="noopener noreferral"> <img class="icons" src="media/instagram.svg" alt="Instagram Logo" /> </a>
             </li>
 
             <li class="footerLink">
-                <a href="https://twitter.com" link="noopener noreferral"> <img class="icons" src="/media/twitter.svg" alt="Twitter Logo" /> </a>
+                <a href="https://twitter.com" link="noopener noreferral"> <img class="icons" src="media/twitter.svg" alt="Twitter Logo" /> </a>
             </li>
 
         </div>
     </footer>
-
 
 </html>
