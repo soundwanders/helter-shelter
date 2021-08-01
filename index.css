@@ -70,11 +70,11 @@ li {
         white-space: no-wrap;
         overflow: hidden;
         background: transparent;
-        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        perspective: 1000px;
     }
 
         .cardContent {
-            display: inherit;
+            display: flex;
             width: 20%;
             height: 40vh;
             justify-content: center;
@@ -82,47 +82,44 @@ li {
             -webkit-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             -moz-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
-        }
-
-        .card-inner {
-            display: inherit;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
+            transition-duration: 0.8s;
+            transition-timing-function: ease-in-out;
             transform-style: preserve-3d;
         }
 
-            .cards-front {
-                margin-top: 8%;
-            }
-
-            .cards-back {
-                background-color: white;
-                color: #493979;
-                transform: rotateY(180deg);
-                font-size: 2vh;
-            }
-
-            .cards-front, .cards-back {
-                position: absolute;
-                display: flex;
-                height: 100%;
-                width: 100%;
-                justify-content: center;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
-
-            /* Front card svg images */
-            .cardIcon {
-                height: 75%;
-            }
-
             /* Rotate card on hover */
-            .cardContent:hover .card-inner {
+            .cardContent:hover , .cards-front {
                 transform: rotateY(180deg);
             }
+
+                .cards-front {
+                    margin-top: 8%;
+                    z-index: 2;
+                }
+
+                .cards-front, .cards-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    transform: rotateX(0deg);
+                }
+
+                .cards-back {
+                    background-color: white;
+                    color: #493979;
+                    font-size: 2vh;
+                    transform: rotateY(180deg);
+                }
+
+                /* Front card svg images */
+                .cardIcon {
+                    display: inherit;
+                    height: 75%;
+                    margin: 0 auto;
+                }
 
 
 /* bottom subsection flex container */
