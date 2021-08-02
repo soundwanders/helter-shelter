@@ -2,15 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-display: swap;
     overflow-x: hidden;
-}
-
-/* forces a line break in flex layout */
-.flexBreak {
-    display: flex;
-    flex-basis: 100%;
-    height: 0;
 }
 
 /* navbar */
@@ -29,12 +21,13 @@ li {
     margin: 0 2%;
     font-size: 2.5vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
-    line-height: 4vh;
+    font-display: swap;
+    line-height: 2em;
 }
 
 #navLogo {
     float: left;
-    height: 4vh;
+    height: 2em;
     padding: 0;
     margin: 0;
 }
@@ -52,7 +45,7 @@ li {
 }
 
 /* main content wrapper, flex container that sits below banner */
-.flexContainer {
+.flexWrapper {
     display: flex;
     width: 100%;
     height: 50%;
@@ -61,7 +54,9 @@ li {
 
     /* 4 content cards flex container */
     .cardContainer {
-        display: flex;
+        display: inherit;
+        flex-wrap: wrap;
+        flex-direction: row;
         flex-basis: 100%;
         width: 100%;
         justify-content: space-evenly;
@@ -73,11 +68,10 @@ li {
         perspective: 1000px;
     }
 
-        .cardContent {
+        .contentCard {
             display: flex;
             width: 20%;
             height: 40vh;
-            justify-content: center;
             background-color: #493979;
             -webkit-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             -moz-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
@@ -88,12 +82,12 @@ li {
         }
 
             /* Rotate card on hover */
-            .cardContent:hover , .cards-front {
+            .contentCard:hover , .cards-front {
                 transform: rotateY(180deg);
             }
 
-                .cards-front {
-                    margin-top: 8%;
+                .cards-front {   
+                    margin-top: 10%;
                     z-index: 2;
                 }
 
@@ -108,43 +102,56 @@ li {
                 }
 
                 .cards-back {
-                    background-color: white;
+                    background-color: #fff;
                     color: #493979;
-                    font-size: 2vh;
                     transform: rotateY(180deg);
                 }
 
                 /* Front card svg images */
                 .cardIcon {
                     display: inherit;
-                    height: 75%;
+                    width: 60%;
+                    height: auto;
                     margin: 0 auto;
                 }
 
+                h2 {
+                    text-align: center;
+                    font-display: swap;
+                }
+                
+                p {
+                    display: initial;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+                    font-size: 1em;
+                    font-display: swap;
+                    text-align: center;
+                    margin: 2em;
+                }
 
-/* bottom subsection flex container */
+/* shelter map flex container */
 .mapContainer {
     display: flex;
     flex-basis: 100%;
     width: 100%;
-    height: 60%;
+    height: 80%;
     justify-content: center;
-    padding: 2%;
     white-space: no-wrap;
     overflow: hidden;
     background: lavender;
 }
 
     #map-id {
-        display: flex;
+        display: inherit;
         justify-content: center;
-        width: 33%;
+        width: 80%;
         height: auto;
-        z-index: 10;
+        z-index: 2;
+        margin: 2em;
     }
 
 .contact {
-    display: flex;
+    display: inherit;
     flex-basis: 100%;
     width: 100%;
     justify-content: center;
@@ -158,9 +165,43 @@ li {
     display: flex;
     width: 100%;
     justify-content: center;
-    background: antiquewhite;
+    background: lavender;
 }
 
 .icons {
     height: 1em;
 }
+
+
+@media only screen and (max-width: 968px) {
+    .cardContainer {
+        padding: 2%;
+        margin-top: 5%;
+    }
+    .contentCard {
+        width: 40%;
+        height: 40%;
+        flex-direction: row;
+        flex-grow: inherit;
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin: 1em 0.25em;
+    }
+
+    p {
+        display: none;
+    }
+}
+
+
+
+/* forces a line break in flex layout
+.flexBreak {
+    display: flex;
+    flex-basis: 100%;
+    height: 0;
+}
+*/
