@@ -19,15 +19,20 @@ li {
     display: flex;
     float: right;
     margin: 0 2%;
-    font-size: 2.5vh;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+    font-size: 1.25em;
     font-display: swap;
     line-height: 2em;
 }
 
 #navLogo {
     float: left;
-    height: 2em;
+    height: 2rem;
     padding: 0;
     margin: 0;
 }
@@ -50,6 +55,7 @@ li {
     width: 100%;
     height: 50%;
     margin: 0 auto;
+    background-color: whitesmoke;
 }
 
     /* 4 content cards flex container */
@@ -87,7 +93,7 @@ li {
             }
 
                 .cards-front {   
-                    margin-top: 10%;
+                    margin-top: 12%;
                     z-index: 2;
                 }
 
@@ -99,34 +105,35 @@ li {
                     -webkit-backface-visibility: hidden;
                     backface-visibility: hidden;
                     transform: rotateX(0deg);
+                    overflow: hidden;
                 }
 
                 .cards-back {
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+                    font-size: 1em;
+                    line-height: 1.5em;
+                    font-display: swap;
+                    text-align: center;
                     background-color: #fff;
                     color: #493979;
+                    overflow: hidden;
                     transform: rotateY(180deg);
                 }
+                    h2 {
+                        text-align: center;
+                        font-display: swap;
+                    }
+                    
+                        p {
+                            margin: 2em;
+                        }
 
-                /* Front card svg images */
-                .cardIcon {
+                /* Front of card svg icons */
+                .cardIcons {
                     display: inherit;
                     width: 60%;
                     height: auto;
-                    margin: 0 auto;
-                }
-
-                h2 {
-                    text-align: center;
-                    font-display: swap;
-                }
-                
-                p {
-                    display: initial;
-                    font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
-                    font-size: 1em;
-                    font-display: swap;
-                    text-align: center;
-                    margin: 2em;
+                    margin: auto;
                 }
 
 /* shelter map flex container */
@@ -138,17 +145,20 @@ li {
     justify-content: center;
     white-space: no-wrap;
     overflow: hidden;
-    background: lavender;
+    background-color: whitesmoke;
 }
 
-    #map-id {
-        display: inherit;
-        justify-content: center;
-        width: 80%;
-        height: auto;
-        z-index: 2;
-        margin: 2em;
-    }
+/* leaflet.js map */
+#map-id {
+    display: inherit;
+    justify-content: center;
+    width: 92%;
+    height: auto;
+    z-index: 2;
+    margin: 2em;
+    border: 2px solid lightgray;
+    border-radius: 0.5em;
+}
 
 .contact {
     display: inherit;
@@ -173,7 +183,7 @@ li {
 }
 
 
-@media only screen and (max-width: 968px) {
+@media only screen and (min-height: 480px) and (max-width: 968px) {
     .cardContainer {
         padding: 2%;
         margin-top: 5%;
@@ -187,15 +197,27 @@ li {
     }
 
     h2 {
-        font-size: 18px;
-        margin: 1em 0.25em;
+        font-size: 1.25em;
+        line-height: 2.256em;
     }
 
-    p {
-        display: none;
+    .cards-back {
+        line-height: 1em;
+        font-size: 0.75em;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    li a {
+        font-size: 0.75em;
+        margin: 0 auto;
+        line-height: 3em;
+    }
+    
+    #navLogo {
+        width: 1em;
     }
 }
-
 
 
 /* forces a line break in flex layout

@@ -10,19 +10,19 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About...</a></li>
-    <li><a href="#built">Technology</a></li>
+    <li><a href="#about">About...</a></li>
+    <li><a href="#technology">Technology</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
 
-### About 'Helter-Shelter'
+### About Helter-Shelter
 
 - Helter-Shelter Animal Oasis is a site promoting New Hampshire animal shelters and humane societies.
 - The Shelter Map has pins added to relevant locations across the state.
-- Just click on each pinned locations to reveal the city/town, organization name, and address.
-- The page design was built with CSS flexbox, placing focus on creating a scalable design with code that is easy to maintain.
+- Click each pinned location to reveal the organization's name and location.
+- Page layout achieved with CSS Flexbox, with a focus on Web Accessibility.
 
 ### Technology
 - HTML, CSS, JavaScript, Leaflet.js
