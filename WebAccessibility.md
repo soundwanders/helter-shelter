@@ -1,6 +1,6 @@
 ## Web Accessibility Checklist
 
-- [ ] Images should have meaningful alternative text
+- [x] Images should have meaningful alternative text
 - [ ] Links should be visually identifiable
 - [ ] Use descriptive section headings
 - [ ] Use correct semantic HTML element structure for your content
@@ -8,7 +8,7 @@
 - [ ] Information should not depend on color, sound, shape, size, or visual location
 - [ ] Text and background color should have sufficient contrast
 - [ ] Content scales properly when zoomed/enlarged
-- [ ] Use a descriptive title tag
+- [x] Use a descriptive title tag
 - [ ] Support keyboard navigation
 - [ ] Focus states should be visible for keyboard users
 - [ ] Use correct HTML5 input types
