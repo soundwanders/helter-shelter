@@ -28,7 +28,7 @@ li a {
     font-size: 1.5em;
     font-weight: 600;
     font-display: swap;
-    line-height: 2em;
+    line-height: 2.5em;
 }
 
 li a:hover {
@@ -38,9 +38,14 @@ li a:hover {
 
 #navLogo {
     float: left;
-    height: 2.5em;
-    padding: 0;
+    padding: 0.33%;
     margin: 0;
+}
+
+#logoIcon {
+    height: 2.5em;
+    border-radius: 2em;
+    line-height: 2.5em;
 }
 
 /* banner image...Helter-Shelter*/
@@ -209,7 +214,7 @@ li a:hover {
     opacity: 0.9;
 }
 
-@media only screen and (min-height: 480px) and (max-width: 968px) {
+@media only screen and (min-height: 360px) and (max-width: 968px) {
     .cardContainer {
         padding: 2%;
         margin-top: 5%;
@@ -237,15 +242,13 @@ li a:hover {
     li a {
         font-size: 0.75em;
         margin: 0 auto;
-        line-height: 2em;
     }
     
-    #navLogo {
-        height: 14px;
-        line-height: 2em;
+    #logoIcon {
+        height: 1em;
+        border-radius: 2em;
     }
 }
-
 
 /* forces a line break in flex layout
 .flexBreak {
