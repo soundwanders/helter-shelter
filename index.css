@@ -38,7 +38,6 @@ li a:hover {
 
 #navLogo {
     float: left;
-    width: auto;
     height: 2.5em;
     padding: 0;
     margin: 0;
@@ -238,12 +237,13 @@ li a:hover {
     li a {
         font-size: 0.75em;
         margin: 0 auto;
-        line-height: 3em;
+        line-height: 2em;
     }
     
     #navLogo {
+        height: 14px;
         width: auto;
-        height: 1em;
+        line-height: 2em;
     }
 }
 
