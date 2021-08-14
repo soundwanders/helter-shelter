@@ -51,7 +51,7 @@
 
                     <div class="cards-back">
                         <h2>Plenty of Furballs</h2>          
-                        <p>
+                        <p class="cardText" id="furballs">
                             About 6 million companion animals enter animal shelters nationwide every year. 
                             Of those, approximately 3 million are dogs and 3 million are cats. Please think twice 
                             before you purchase your pet from a breeder.
@@ -66,7 +66,7 @@
 
                     <div class="cards-back">
                         <h2>Happy & Healthy</h2>
-                        <p id="vax">
+                        <p class="cardText" id="vax">
                             Many shelters provide a health screen that includes vaccinations, parasite treatment, 
                             and spay/neuter surgery, all covered in the adoption fee. If services are not provided,
                             a free veterinary visit often is included in the adoption fee.
@@ -80,12 +80,12 @@
                     </div>
 
                     <div class="cards-back">
-                        <h2>Take Your Pick</h2>
+                        <h2>No Pet Left Behind</h2>
 
-                        <p id="shelters">
+                        <p class="cardText" id="shelters">
                             Organizations like animal shelters, humane societies, and rescue leagues will 
-                            house and care for abandoned, stray and injured animals. They may also 
-                            rehabilitate abused animals to help them recover and find a loving home.
+                            house and care for owner-surrendered, abandoned, stray and injured animals. They 
+                            may also rehabilitate abused animals to help them recover and find a loving home.
                         </p>
                     </div>
                 </div>
@@ -98,9 +98,9 @@
                     <div class="cards-back">
                         <h2>Helter-Shelter</h2>
                         
-                        <p id="mapText">
+                        <p class="cardText" id="helterMap">
                             The Helter-Shelter Map below contains pinned locations throughout New Hampshire. 
-                            You can click on each pin to find the name and location of each organization.
+                            You can click on each pin to find the name and location of each organization. <br /><br /> 
                             Can you find your local animal shelter on the map?
                         </p>
                     </div>
@@ -114,21 +114,31 @@
         </div>
 
         <div class="contact">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Vestibulum laoreet lacinia lorem in pharetra dolamas.
-            Aliquam sodales quam massa, at sollicitudin nisi fringilla. 
-            Nullam mattis nulla malesuada felis gravida pharetra. 
-            Phasellus velit urna, aliquet nec bibendum volutpat vitae ex. 
-            Cras egestas elit non sapien tincidunt, vel luctus metus semper. 
-            Nulla mattis eu ligula ut blandit. Phasellus tempor, mi a viverra 
-            maximus, nibh felis vestibulum mauris, vel elementum arcu magna. 
-        </div>
 
+            <form action="actionPage.php">
+            <div class="contactHeader">
+                <h2>Have Any Questions?</h2>
+                <h2>We'd Love to Help!</h2>
+            </div>
+                <label for="name">Name</label>
+                <input type="text" class="contactInput" id="name" name="name" placeholder="Name..."/>
+                <label for="email">E-Mail</label>
+                <input type="text" class="contactInput" id="email" name="email" placeholder="E-Mail..."/>
+
+                <label for="Subject">Subject</label>
+                <textarea class="contactInput" id="subject" name="subject" placeholder="Subject..."></textarea>
+
+                <label for="Message">Message</label>
+                <textarea class="contactInput" id="message" name="message" placeholder="Message..."></textarea>
+
+                <label for="Submit">Submit</label>
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>
     </body>
 
-
     <footer>
-
         <div class="helter-footer">
             <ul class="foot">
                 <li class="footerLink" id="helter"><a href="#helter-shelter">Helter-Shelter</a></li>

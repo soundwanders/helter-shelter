@@ -24,7 +24,7 @@ li {
 li a {
     text-decoration: none;
     color: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5em;
     font-weight: 600;
     font-display: swap;
@@ -34,6 +34,7 @@ li a {
 li a:hover {
     color: lightskyblue;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 #navLogo {
@@ -90,12 +91,14 @@ li a:hover {
             width: 20%;
             height: 40vh;
             background-color: #493979;
+            box-sizing: border-box;
             -webkit-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             -moz-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             transition-duration: 0.8s;
             transition-timing-function: ease-in-out;
             transform-style: preserve-3d;
+            
         }
 
             /* Rotate card on hover */
@@ -120,7 +123,7 @@ li a:hover {
                 }
 
                 .cards-back {
-                    font-family: 'Lucida Sans', 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                     font-size: 1em;
                     line-height: 1.5em;
                     font-display: swap;
@@ -131,12 +134,13 @@ li a:hover {
                     transform: rotateY(180deg);
                 }
                     h2 {
+                        font-size: 2em;
                         text-align: center;
                         font-display: swap;
                     }
                     
-                        p {
-                            margin: 2em;
+                        p.cardText {
+                            margin: 3em;
                         }
 
                 /* Front of card svg icons */
@@ -157,6 +161,7 @@ li a:hover {
     white-space: no-wrap;
     overflow: hidden;
     background-color: whitesmoke;
+    padding-bottom: 2em;
 }
 
 /* leaflet.js map */
@@ -167,20 +172,87 @@ li a:hover {
     height: auto;
     z-index: 2;
     margin: 2em;
-    border: 2px solid lightgray;
+    border: 3px solid lightgray;
     border-radius: 0.5em;
 }
 
 .contact {
     display: inherit;
-    flex-basis: 100%;
     width: 100%;
     justify-content: center;
     padding: 2%;
     white-space: no-wrap;
     overflow: hidden;
-    background: rgb(169, 169, 255);
+    background: rgb(210, 210, 255);
 }
+
+.contactHeader {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000;
+    font-weight: 600;
+}
+
+input[type=text], select, textarea {
+    display: flex;
+    flex-basis: 100%;
+    margin: 1em auto;
+    padding: 1.25em;
+    border: 5px solid black;
+    border-radius: 1em;
+    line-height: 1.25em;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+input[type=submit] {
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin: 1em auto;
+    padding: 0.75em 1.25em;
+    font-size: 1.25em;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    border: 5px solid black;
+    border-radius: 1em;
+    user-select: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    opacity: 0.9;
+}
+
+#name {
+    width: 30%;
+}
+
+#email {
+    width: 30%;
+}
+
+#subject {
+    width: 30%;
+    resize: none;
+}
+
+#message {
+    width: 30%;
+    padding-bottom: 10%;
+}
+
+label {
+    visibility: hidden;
+}
+
+textarea#message[placeholder] {
+    font-size: 2em;
+}
+
+
+
+
 
 .helter-footer {
     background-color: #493979;
@@ -229,7 +301,12 @@ li a:hover {
 
     h2 {
         font-size: 1.5em;
-        line-height: 2.256em;
+        line-height: 2em;
+    }
+
+    p.cardText {
+        margin: 1em;
+        margin-top: 3em;
     }
 
     .cards-back {
