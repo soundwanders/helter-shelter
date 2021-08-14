@@ -322,6 +322,10 @@ textarea#message[placeholder] {
         width: 60%;
     }
 
+    textarea#message[placeholder] {
+        font-size: 1.5em;
+    }
+
     #navLogo {
         padding: 1.5%;
     }
