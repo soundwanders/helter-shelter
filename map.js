@@ -34,6 +34,10 @@ let pins =
             42.88017166872979, -71.57145002651751
         ] ,
         [
+            "Charlestown <br/> River Valley Animal Protection <br/> 60 Cummings Ave, Charlestown, NH 03603",
+            43.25343420053334, -72.27105875717771
+        ] ,
+        [
             "Chichester <br/> Live & Let Farm <br/> 20 Paradice Ln, Chichester, NH 03258", 
             43.27309109525063, -71.61676265840609
         ] ,
@@ -54,13 +58,16 @@ let pins =
             43.23227695833639, -70.8630601671781
         ] ,
         [
-            "Franklin <br/> Franklin Animal Shelter <br/> 19 Rescue Road, Franklin, NH 03235" , 
+            "Enfield <br/> Upper Valley Humane Society <br/> 300 Old Rte 10, Enfield, NH 03748",
+            43.61734117845991, -72.08164451714268
+        ] ,
+        [
+            "Franklin <br/> Franklin Animal Shelter <br/> 19 Rescue Road, Franklin, NH 03235", 
             43.42856839976283, -71.58582048313339
         ] ,
         [
             "Hudson <br/> Happy Tails Pet Rescue <br/> 14 Pine Rd, Hudson, NH 03051", 
             42.72227834132841, -71.34458524183644
-        
         ] ,
         [
             "Laconia <br/> New Hampshire Humane Society <br/> 1305 Meredith Center Rd, Laconia, NH 03246", 
