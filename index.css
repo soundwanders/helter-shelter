@@ -135,8 +135,14 @@ li a:hover {
                 }
                     h2 {
                         font-size: 2em;
+                        line-height: 2em;
+                        margin: 1em;
                         text-align: center;
                         font-display: swap;
+                    }
+
+                    h2#noPet {
+                        margin: 0.5em;
                     }
                     
                         p.cardText {
@@ -250,10 +256,6 @@ textarea#message[placeholder] {
     font-size: 2em;
 }
 
-
-
-
-
 .helter-footer {
     background-color: #493979;
 }
@@ -302,6 +304,7 @@ textarea#message[placeholder] {
     h2 {
         font-size: 1.5em;
         line-height: 2em;
+        margin: 1em;
     }
 
     p.cardText {
