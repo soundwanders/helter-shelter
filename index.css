@@ -230,23 +230,17 @@ input[type=submit]:hover {
     opacity: 0.9;
 }
 
-#name {
-    width: 30%;
-}
-
-#email {
+.contactInput {
     width: 30%;
 }
 
 #subject {
-    width: 30%;
     resize: none;
 }
 
 #message {
-    width: 30%;
     padding-bottom: 10%;
-}
+}   
 
 label {
     visibility: hidden;
@@ -322,6 +316,10 @@ textarea#message[placeholder] {
     li a {
         font-size: 0.75em;
         margin: 0 auto;
+    }
+
+    .contactInput {
+        width: 50%;
     }
 
     #navLogo {
