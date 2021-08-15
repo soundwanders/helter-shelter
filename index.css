@@ -315,8 +315,9 @@ label {
     }
 
     h2 {
-        font-size: 1.25em;
+        font-size: 2em;
         margin: 1em;
+        line-height: 1.5em;
         margin-bottom: 1.25em;
     }
 
