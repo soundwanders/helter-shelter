@@ -91,7 +91,6 @@ li a:hover {
             width: 20%;
             height: 40vh;
             background-color: #493979;
-            box-sizing: border-box;
             -webkit-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             -moz-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
@@ -141,8 +140,8 @@ li a:hover {
                         font-display: swap;
                     }
 
-                    h2#noPet {
-                        margin: 0.5em;
+                    h2#leftBehind {
+                        margin: 1em 0.5em;
                     }
                     
                         p.cardText {
@@ -182,14 +181,14 @@ li a:hover {
     border-radius: 0.5em;
 }
 
-.contact {
+.contactContainer {
     display: inherit;
     width: 100%;
     justify-content: center;
-    padding: 2%;
+    padding: 2% 0;
     white-space: no-wrap;
     overflow: hidden;
-    background: rgb(210, 210, 255);
+    background: #d2d2ff;
 }
 
 .contactHeader {
@@ -215,7 +214,7 @@ input[type=submit] {
     justify-content: center;
     color: black;
     margin: 1em auto;
-    padding: 0.75em 1.25em;
+    padding: 0.75em 1em;
     font-size: 1.25em;
     font-weight: 600;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -244,6 +243,10 @@ input[type=submit]:hover {
 
 label {
     visibility: hidden;
+}
+
+input[placeholder] {
+    font-family: mono;
 }
 
 textarea#message[placeholder] {
@@ -320,6 +323,10 @@ textarea#message[placeholder] {
 
     .contactInput {
         width: 60%;
+    }
+
+    .paws {
+        display: none;
     }
 
     textarea#message[placeholder] {

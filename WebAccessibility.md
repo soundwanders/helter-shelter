@@ -7,13 +7,13 @@
 - [ ] Forms have descriptive labels
 - [ ] Information should not depend on color, sound, shape, size, or visual location
 - [ ] Text and background color should have sufficient contrast
-- [ ] Content scales properly when zoomed/enlarged
+- [x] Content scales properly when zoomed/enlarged
 - [x] Use a descriptive title tag
 - [ ] Support keyboard navigation
 - [ ] Focus states should be visible for keyboard users
 - [ ] Use correct HTML5 input types
 - [ ] Content that automatically changes has the ability to be paused
-- [ ] Limit or remove any flashing elements
+- [x] Limit or remove any flashing elements
 - [ ] Users should be able to navigate content using a screen reader
 - [ ] Allow keyboard users to skip navigation
 - [ ] Offer multiple ways to find pages on your website
@@ -22,7 +22,7 @@
 - [ ] Site should not time out unexpectedly
 - [ ] Multimedia should have alternative ways to be consumed
 - [ ] Ensure audio and video is not played automatically unless that is the expected behavior
-- [ ] Use the HTML lang attribute
+- [x] Use the HTML lang attribute
 - [ ] Use understandable inputs labels
 - [ ] Forms have helpful and accessible error and verification messages
 - [ ] Make data available for graphs, charts, maps, SVGs etc. through assistive technology

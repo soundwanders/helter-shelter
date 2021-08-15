@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -29,10 +29,10 @@
         <div id="navbar">
             <ul>
                 <li class="navItem" id="navLogo"><img id="logoIcon" src="media/icons/navLogo.svg" alt="Helter-Shelter Logo"/></li>
-                <li class="navItem" id="contact"><a href="#contact">Contact</a></li>
-                <li class="navItem" id="shelter"><a href="#shelter-map">Shelter Map</a></li>
-                <li class="navItem" id="about"><a href="#about">About</a></li>
-                <li class="navItem" id="home"><a href="#home">Home</a></li>
+                <li class="navItem" id="contactNav"><a href="#contact">Contact</a></li>
+                <li class="navItem" id="shelterNav"><a href="#shelterMap">Shelter Map</a></li>
+                <li class="navItem" id="aboutNav"><a href="#about">About</a></li>
+                <li class="navItem" id="homeNav"><a href="#navLogo">Home</a></li>
             </ul>
         </div>
     </header>
@@ -42,7 +42,7 @@
             <img class="bannerImage" src="media/banner.png" alt="Banner Image" />
         </div>
 
-        <div class="flexWrapper">
+        <div class="flexWrapper" id="about">
             <div class="cardContainer">
                 <div class="contentCard">                        
                     <div class="cards-front" id="adopt">
@@ -53,8 +53,8 @@
                         <h2>Plenty of Furballs</h2>          
                         <p class="cardText" id="furballs">
                             About 6 million companion animals enter animal shelters nationwide every year. 
-                            Of those, approximately 3 million are dogs and 3 million are cats. Please think twice 
-                            before you purchase your pet from a breeder.
+                            Of those, approximately 3 million are dogs and 3 million are cats. Please reconsider 
+                            purchasing your pets from a retail store or breeder.
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="cards-back">
-                        <h2 id="noPet">No Pet Left Behind</h2>
+                        <h2 id="leftBehind">No Pet Left Behind</h2>
 
                         <p class="cardText" id="shelters">
                             Organizations like animal shelters, humane societies, and rescue leagues will 
@@ -108,18 +108,22 @@
             </div>
         </div>
 
-        <div class="mapContainer">
+        <div class="mapContainer" id="shelterMap">
             <div id="map-id"></div>
             <script src="map.js"></script>
         </div>
 
-        <div class="contact">
+        <div class="contactContainer" id="contact">
+            <img src="media/paws-left.png" class="paws" alt="Paws Decorative Image" style="float: left; margin: 0; width: 10em; padding-top: 12%;">
+        
+            <img src="media/paws-right.png" class="paws" alt="Paws Decorative Image" style="float: right; width: 10em; padding-top: 12%;">
 
-            <form action="actionPage.php">
             <div class="contactHeader">
                 <h2>Have Any Questions?</h2>
                 <h2>We'd Love to Help!</h2>
             </div>
+
+            <form action="actionPage.php">
                 <label for="name">Name</label>
                 <input type="text" class="contactInput" id="name" name="name" placeholder="Name..."/>
                 <label for="email">E-Mail</label>
@@ -141,11 +145,11 @@
     <footer>
         <div class="helter-footer">
             <ul class="foot">
-                <li class="footerLink" id="helter"><a href="#helter-shelter">Helter-Shelter</a></li>
+                <li class="footerLink" id="helter footer"><a href="#navLogo">Helter-Shelter</a></li>
                 <li class="footerLink" id="sitemap"><a href="#site-map">Site Map</a></li>
-                <li class="footerLink" id="about"><a href="#about">About</a></li>
+                <li class="footerLink" id="about footer"><a href="#about">About</a></li>
+                <li class="footerLink" id="contact footer"><a href="#contact">Contact</a></li>
                 <li class="footerLink" id="faq"><a href="#faq">FAQ</a></li>
-                <li class="footerLink" id="contact"><a href="#contact">Contact</a></li>
             </ul>
         </div>
         <div class="helter-footer">
@@ -153,7 +157,7 @@
                 <li class="footerLink" id="careers"><a href="#careers">Careers</a></li>
                 <li class="footerLink" id="sponsors"><a href="#sponsors">Sponsors & Partners</a></li>
                 <li class="footerLink" id="terms"><a href="#user-terms">User Terms</a></li>
-                <li class="footerLink" id=privacy"><a href="#privacy-policy">Privacy Policy</a></li>
+                <li class="footerLink" id="privacy"><a href="#privacy-policy">Privacy Policy</a></li>
             </ul>
         </div>
 
