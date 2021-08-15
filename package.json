@@ -1,8 +1,8 @@
 {
   "name": "helter-shelter",
   "version": "1.0.0",
-  "description": "Helter-Shelter Animal Oasis webpage.",
-  "main": "index.js",
+  "description": "Helter-Shelter is a site promoting animal shelters, rescue organizations and humane societies throughout the state of New Hampshire.",
+  "main": "index.html",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
@@ -17,7 +17,6 @@
     "Animal",
     "Shelter",
     "Pets",
-    "Shelter",
     "Web",
     "Application",
     "Web",
