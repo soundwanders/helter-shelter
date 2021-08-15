@@ -320,6 +320,10 @@ label {
         margin: 1em;
     }
 
+    h2#helterCard {
+        margin: 1em;
+    }
+
     h2#leftbehind {
         margin: 1em;
     }
@@ -353,6 +357,10 @@ label {
         display: none;
     }
 
+    textarea#subject[placeholder] {
+        font-size: initial;
+    }
+
     textarea#message[placeholder] {
         font-size: 1.5em;
     }
@@ -366,6 +374,16 @@ label {
         border-radius: 2em;
     }
 }
+
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+    h2 {
+        font-size: 2em;
+        margin: 0.5em;
+    }
+}
+
+
+
 
 /* forces a line break in flex layout
 .flexBreak {
