@@ -49,7 +49,6 @@ li a:hover {
     line-height: 2.5em;
 }
 
-/* banner image...Helter-Shelter*/
 .bannerContainer {
     display: flex;
     flex-basis: 100%;
@@ -61,7 +60,7 @@ li a:hover {
     width: 100%;
 }
 
-/* main content wrapper, flex container that sits below banner */
+/* main content wrapper, flex container sits below banner and holds content cards */
 .flexWrapper {
     display: flex;
     width: 100%;
@@ -100,61 +99,69 @@ li a:hover {
             
         }
 
-            /* Rotate card on hover */
-            .contentCard:hover , .cards-front {
-                transform: rotateY(180deg);
+        /* Rotate card on hover */
+        .contentCard:hover , .cards-front {
+            transform: rotateY(180deg);
+        }
+
+            .cards-front {   
+                margin-top: 12%;
+                overflow: hidden;
+                z-index: 2;
             }
 
-                .cards-front {   
-                    margin-top: 12%;
-                    z-index: 2;
-                }
+            .cards-front, .cards-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                transform: rotateX(0deg);
+            }
 
-                .cards-front, .cards-back {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    justify-content: center;
-                    -webkit-backface-visibility: hidden;
-                    backface-visibility: hidden;
-                    transform: rotateX(0deg);
-                    overflow: hidden;
-                }
-
-                .cards-back {
-                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                    font-size: 1em;
+            .cards-back {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 1em;
+                line-height: 1.5em;
+                font-display: swap;
+                text-align: center;
+                background-color: #fff;
+                color: #493979;
+                overflow-x: hidden;
+                transform: rotateY(180deg);
+            }
+            /* card text content style adjustments to achieve desired display */
+                h2 {
+                    font-size: 3.5em;
                     line-height: 1.5em;
-                    font-display: swap;
+                    margin: 0.5em 1em;
+                    margin-bottom: 1.5em;
                     text-align: center;
-                    background-color: #fff;
-                    color: #493979;
-                    overflow: hidden;
-                    transform: rotateY(180deg);
+                    font-display: swap;
                 }
-                    h2 {
-                        font-size: 2em;
-                        line-height: 2em;
-                        margin: 1em;
-                        text-align: center;
-                        font-display: swap;
+
+                h2#leftBehind {
+                    margin: 0.5em 0.5em;
+                    margin-bottom: 1.5em;
+                }
+                
+                h2#helterCard {
+                    margin: 1em 0.5em;
+                    margin-bottom: 2em;
+                }
+                
+                    p.cardText {
+                        margin: 3em;
                     }
 
-                    h2#leftBehind {
-                        margin: 1em 0.5em;
-                    }
-                    
-                        p.cardText {
-                            margin: 3em;
-                        }
-
-                /* Front of card svg icons */
-                .cardIcons {
-                    display: inherit;
-                    width: 60%;
-                    height: auto;
-                    margin: auto;
-                }
+        /* Front of card svg icons */
+        .cardIcons {
+            display: inherit;
+            width: 60%;
+            height: auto;
+            margin: auto;
+        }
 
 /* shelter map flex container */
 .mapContainer {
@@ -170,10 +177,10 @@ li a:hover {
 }
 
 /* leaflet.js map */
-#map-id {
+#map-display {
     display: inherit;
     justify-content: center;
-    width: 92%;
+    width: 80%;
     height: auto;
     z-index: 2;
     margin: 2em;
@@ -197,11 +204,17 @@ li a:hover {
     font-weight: 600;
 }
 
+.contactInput {
+    width: 33%;
+}
+
+/* Contact form */
 input[type=text], select, textarea {
     display: flex;
     flex-basis: 100%;
     margin: 1em auto;
     padding: 1.25em;
+    font-family: 'Courier New', Courier, monospace !important;
     border: 5px solid black;
     border-radius: 1em;
     line-height: 1.25em;
@@ -212,13 +225,15 @@ input[type=text], select, textarea {
 input[type=submit] {
     display: flex;
     justify-content: center;
+    background-color: #fff;
     color: black;
     margin: 1em auto;
     padding: 0.75em 1em;
+    font-family: 'Courier New', Courier, monospace !important;
     font-size: 1.25em;
     font-weight: 600;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #fff;
+    font-family: monospace;
+    letter-spacing: 0.25px;
     border: 5px solid black;
     border-radius: 1em;
     user-select: none;
@@ -229,28 +244,29 @@ input[type=submit]:hover {
     opacity: 0.9;
 }
 
-.contactInput {
-    width: 30%;
-}
-
-#subject {
-    resize: none;
-}
-
-#message {
-    padding-bottom: 10%;
-}   
-
-label {
-    visibility: hidden;
-}
-
 input[placeholder] {
-    font-family: mono;
+    font-size: 1em;
+}
+
+textarea#subject[placeholder] {
+    font-size: 1.75em;
+    line-height: 2em;
 }
 
 textarea#message[placeholder] {
     font-size: 2em;
+}
+
+    #subject {
+        padding: 0.5em 1em;
+    }
+
+    #message {
+        padding-bottom: 10%;
+    }   
+
+label {
+    visibility: hidden;
 }
 
 .helter-footer {
@@ -299,8 +315,12 @@ textarea#message[placeholder] {
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 2em;
         line-height: 2em;
+        margin: 1em;
+    }
+
+    h2#leftbehind {
         margin: 1em;
     }
 
@@ -319,6 +339,10 @@ textarea#message[placeholder] {
     li a {
         font-size: 0.75em;
         margin: 0 auto;
+    }
+
+    #map-id {
+        width: 90%;
     }
 
     .contactInput {

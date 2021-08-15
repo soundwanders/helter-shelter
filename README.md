@@ -22,7 +22,7 @@
 - Helter-Shelter Animal Oasis is a site promoting New Hampshire animal shelters and humane societies.
 - The Shelter Map has pins added to relevant locations across the state.
 - Click each pinned location to reveal the organization's name and location.
-- Page layout achieved with CSS Flexbox, with a focus on Web Accessibility.
+- CSS Flexbox used to achieve responsive design.
 
 ### Technology
 - HTML, CSS, JavaScript, Leaflet.js

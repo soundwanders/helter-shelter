@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="cards-back">
-                        <h2>Helter-Shelter</h2>
+                        <h2 id="helterCard">Helter-Shelter</h2>
                         
                         <p class="cardText" id="helterMap">
                             The Helter-Shelter Map below contains pinned locations throughout New Hampshire. 
@@ -109,18 +109,17 @@
         </div>
 
         <div class="mapContainer" id="shelterMap">
-            <div id="map-id"></div>
+            <div id="map-display"></div>
             <script src="map.js"></script>
         </div>
 
-        <div class="contactContainer" id="contact">
+        <div class="contactContainer">
             <img src="media/paws-left.png" class="paws" alt="Paws Decorative Image" style="float: left; margin: 0; width: 10em; padding-top: 12%;">
         
             <img src="media/paws-right.png" class="paws" alt="Paws Decorative Image" style="float: right; width: 10em; padding-top: 12%;">
 
-            <div class="contactHeader">
-                <h2>Have Any Questions?</h2>
-                <h2>We'd Love to Help!</h2>
+            <div class="contactHeader"  id="contact">
+                <h2>Contact Us!</h2>
             </div>
 
             <form action="actionPage.php">
@@ -136,7 +135,7 @@
                 <textarea class="contactInput" id="message" name="message" placeholder="Message..."></textarea>
 
                 <label for="Submit">Submit</label>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" onClick=(clear());>
             </form>
 
         </div>
