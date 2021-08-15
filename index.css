@@ -199,9 +199,13 @@ li a:hover {
 }
 
 .contactHeader {
+    margin: 1em;
+    margin-bottom: 1.75em;
+    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #000;
     font-weight: 600;
+    font-display: swap;
+    color: #000;
 }
 
 .contactInput {
@@ -325,8 +329,9 @@ label {
         margin-bottom: 1.25em;
     }
 
-    h2#leftbehind {
-        margin: 1em 0.75em;
+    h2#leftBehind {
+        font-size: 1.5em;
+        margin: 1em;
         margin-bottom: 1.25em;
     }
 
