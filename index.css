@@ -133,22 +133,22 @@ li a:hover {
             }
             /* card text content style adjustments to achieve desired display */
                 h2 {
-                    font-size: 3.5em;
-                    line-height: 1.5em;
-                    margin: 0.5em 1em;
-                    margin-bottom: 1.5em;
+                    font-size: 3em;
+                    line-height: 2em;
+                    margin: 1em;
+                    margin-bottom: 1.75em;
                     text-align: center;
                     font-display: swap;
                 }
 
                 h2#leftBehind {
-                    margin: 0.5em 0.5em;
+                    margin: 0.5em 1em;
                     margin-bottom: 1.5em;
                 }
                 
                 h2#helterCard {
                     margin: 1em 0.5em;
-                    margin-bottom: 2em;
+                    margin-bottom: 1.75em;
                 }
                 
                     p.cardText {
@@ -315,17 +315,19 @@ label {
     }
 
     h2 {
-        font-size: 2em;
-        line-height: 2em;
+        font-size: 1.25em;
         margin: 1em;
+        margin-bottom: 1.25em;
     }
 
     h2#helterCard {
         margin: 1em;
+        margin-bottom: 1.25em;
     }
 
     h2#leftbehind {
         margin: 1em;
+        margin-bottom: 1.25em;
     }
 
     p.cardText {
@@ -377,12 +379,9 @@ label {
 
 @media (orientation: landscape) and (hover: none) and (pointer: coarse) {
     h2 {
-        font-size: 2em;
-        margin: 0.5em;
+        font-size: 1em;
     }
 }
-
-
 
 
 /* forces a line break in flex layout
