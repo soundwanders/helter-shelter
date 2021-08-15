@@ -130,17 +130,15 @@ li a:hover {
                 transform: rotateY(180deg);
             }
             /* card text content style adjustments to achieve desired display */
-                h2 {
+                h2.cardTitle {
                     font-size: 3em;
                     line-height: 2em;
                     text-align: center;
-                    text-decoration: underline;
                     font-display: swap;
-                    text-underline-offset: 0.1em;
+                    text-underline-offset: 0.2em;
                     margin: 1em;
                     margin-bottom: 1.75em;
                 }
-                
 
                     h2#leftBehind {
                         margin: 0.5em 1em;
@@ -177,6 +175,8 @@ li a:hover {
 .mapTitle {
     margin: 0 auto;
     text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 5em;
     font-weight: 600;
@@ -224,7 +224,6 @@ li a:hover {
     margin-bottom: 1.75em;
     text-align: center;
     text-decoration: underline;
-    text-decoration-thickness: 0.1em;
     text-underline-offset: 0.25em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 600;
