@@ -23,6 +23,8 @@
         crossorigin="">
         </script>
 
+        <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
     </head>
 
     <header>
@@ -125,7 +127,7 @@
                 <h1>Contact Us!</h1>
             </div>
 
-            <form action="actionPage.php">
+            <form method="POST" action="contact.php" id="contactForm">
                 <label for="name">Name</label>
                 <input type="text" class="contactInput" id="name" name="name" placeholder="Name..."/>
                 <label for="email">E-Mail</label>
@@ -138,8 +140,51 @@
                 <textarea class="contactInput" id="message" name="message" placeholder="Message..."></textarea>
 
                 <label for="Submit">Submit</label>
-                <input type="submit" value="Submit" onClick=(clear());>
+                <input type="submit" id="submit" value="Submit" onClick=(clear());>
             </form>
+
+            <!-- Client side data validation for contact form -->
+            <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
+            <script>
+                const constraints = {
+                    name: {
+                        presence: { allowEmpty: false }
+                    },
+                    email: {
+                        presence: { allowEmpty: false },
+                        email: true
+                    },
+                    message: {
+                        presence: { allowEmpty: false }
+                    }
+                };
+          
+                const form = document.getElementById('contactForm');
+          
+                form.addEventListener('submit', function (event) {
+                    const formValues = {
+                        name: form.elements.name.value,
+                        email: form.elements.email.value,
+                        subject: form.elements.subject.value,
+                        message: form.elements.message.value
+                    };
+          
+                    const errors = validate(formValues, constraints);
+          
+                    if (errors) {
+                        event.preventDefault();
+                        const errorMessage = Object
+                            .values(errors)
+                            .map(function (fieldValues) {
+                                return fieldValues.join(', ')
+                            })
+                            .join("\n");
+          
+                        alert(errorMessage);
+                    }
+                }, false);
+            </script>
 
         </div>
     </body>
@@ -182,5 +227,7 @@
             </ul>
         </div>
     </footer>
+
+    <noscript>Please enable JavaScript to view the Helter-Shelter map or send an E-mail using the contact form. Thank you!</noscript>
 
 </html>
