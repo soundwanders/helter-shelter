@@ -130,7 +130,7 @@ li a:hover {
                 transform: rotateY(180deg);
             }
             /* card text content style adjustments to achieve desired display */
-                h2.cardTitle {
+                h2 {
                     font-size: 3em;
                     line-height: 2em;
                     text-align: center;
