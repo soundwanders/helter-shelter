@@ -419,6 +419,11 @@ label {
         font-size: 1.5em;
     }
 
+    p.cardText {
+        margin: 1rem 0.25rem;
+        margin-top: 3rem;
+    }
+
     .mapTitle {
         font-size: 2em;
     }
@@ -426,6 +431,11 @@ label {
     .contactHeader {
         font-size: 2em;
     }
+
+    textarea#message[placeholder] {
+        font-size: 1.5em;
+    }
+
 }
 
 
