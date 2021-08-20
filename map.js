@@ -1,4 +1,4 @@
-let shelterMap = L.map('map-display').setView([43.241086332706374, -71.82000972872403] , 8);
+var shelterMap = L.map('map-display').setView([43.241086332706374, -71.82000972872403] , 8);
                 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -17,10 +17,10 @@ let iconOptions = {
  }
  
  // Creating a custom icon
-let smallIcon = L.icon(iconOptions);
+const smallIcon = L.icon(iconOptions);
 
 // Options for the marker
-let markerOptions = {
+const markerOptions = {
     title: this.value ,
     clickable: true ,
     draggable: false ,
