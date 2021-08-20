@@ -27,7 +27,6 @@ li a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5em;
     font-weight: 600;
-    font-display: swap;
     line-height: 2.5em;
 }
 
@@ -122,7 +121,6 @@ li a:hover {
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 font-size: 1em;
                 line-height: 1.5em;
-                font-display: swap;
                 text-align: center;
                 background-color: #fff;
                 color: #493979;
@@ -134,7 +132,6 @@ li a:hover {
                     font-size: 3em;
                     line-height: 2em;
                     text-align: center;
-                    font-display: swap;
                     text-underline-offset: 0.2em;
                     margin: 1em;
                     margin-bottom: 1.75em;
@@ -180,7 +177,6 @@ li a:hover {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 5em;
     font-weight: 600;
-    font-display: swap;
     color: #000;
 }
 
@@ -228,7 +224,6 @@ li a:hover {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 600;
     font-size: 2.75em;
-    font-display: swap;
     color: #000;
 }
 
@@ -413,8 +408,8 @@ label {
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-height: 420px) and (min-width: 568px) { 
+/* Medium devices (landscape mode mobile */
+@media only screen and (max-height: 440px) and (min-width: 568px) { 
     h2 {
         font-size: 1.5em;
     }
@@ -430,6 +425,10 @@ label {
 
     .contactHeader {
         font-size: 2em;
+    }
+
+    textarea#subject[placeholder] {
+        font-size: initial;
     }
 
     textarea#message[placeholder] {
