@@ -88,7 +88,8 @@ for (i = 0; i < collapse.length; i++) {
 
         if (content.style.display === "flex") {
             content.style.display = "none";
-        } else { content.style.display = "flex";
+        } else { 
+            content.style.display = "flex";
         }
         if (content.style.maxHeight) {
             content.style.maxHeight = null;

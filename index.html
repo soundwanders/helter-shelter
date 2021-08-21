@@ -113,8 +113,12 @@
         <div class="mapTitleContainer">
             <h2 class="mapTitle" id="shelterMap">Helter-Shelter Map</h2>
         </div>
+
             <div class="mapContainer">
                 <div id="map-display"></div>
+            </div>
+            <div class="buttonFlex">
+                <button id="reset" title="Click to reset map to initial view">Reset Map View</button>
             </div>
 
                 <button class="button-collapsible" title="Click to expand data table"></button>
@@ -133,7 +137,8 @@
                 <h1>Contact Us!</h1>
             </div>
 
-            <form method="POST" action="contact.php" id="contactForm">
+            <!-- remove '#' character from form action when backend is live to activate php -->
+            <form method="POST" action="#contact.php" id="contactForm">
                 <label for="name">Name</label>
                 <input type="text" class="contactInput" id="name" name="name" placeholder="Name..."/>
                 <label for="email">E-Mail</label>

@@ -17,7 +17,7 @@ const constraints = {
 
 const form = document.getElementById('contactForm');
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', function(event) {
     const formValues = {
         name: form.elements.name.value,
         email: form.elements.email.value,
