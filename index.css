@@ -404,8 +404,8 @@ label {
     opacity: 0.9;
 }
 
-/* Reduce card image width on smaller mobile devices such as the the iPhone 5 */
-@media only screen and (min-height: 320px) and (max-width: 568px) {
+/* Reduce card image width on small mobile devices */
+@media only screen and (max-height: 340px) and (max-width: 568px) {
     .cardIcons {
         width: 45%;
     }
