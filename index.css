@@ -205,6 +205,43 @@ li a:hover {
         border-radius: 0.5em;
     }
 
+        .button-collapsible {
+            display: inherit;
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: #493979;
+            color: white;
+            font-size: 8em;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .button-collapsible:after {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            content: '\002B';
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+            .dataTable {
+                display: none;
+                justify-content: center;
+                background-color: whitesmoke;
+                max-height: 0;
+                padding: 0 1em;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+
+                table {
+                    padding: 2em 1em;
+                }
+
 .contactContainer {
     display: inherit;
     width: 100%;
@@ -304,9 +341,10 @@ label {
 }
 
 .foot a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 400;
 }
-  
+
 .footerLogos {
     display: flex;
     flex-basis: 100%;
@@ -434,9 +472,7 @@ label {
     textarea#message[placeholder] {
         font-size: 1.5em;
     }
-
 }
-
 
 /* forces a line break in flex layout
 .flexBreak {

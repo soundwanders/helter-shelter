@@ -55,7 +55,7 @@
                         <h2 class="cardTitle">Plenty of Furballs</h2>          
                         <p class="cardText" id="furballs">
                             About 6 million companion animals enter animal shelters nationwide every year. 
-                            Of those, approximately 3 million are dogs and 3 million are cats. <br /><br /> 
+                            Of those, approximately 3 million are dogs and 3 million are cats. <br/><br/> 
                             Please reconsider purchasing your pets from a retail store or breeder.
                         </p>
                     </div>
@@ -70,7 +70,7 @@
                         <h2 class="cardTitle">Happy & Healthy</h2>
                         <p class="cardText" id="vax">
                             Many shelters provide a full health screen that includes vaccinations, parasite treatment, 
-                            and spay/neuter surgery, all covered in the adoption fee. <br /><br />
+                            and spay/neuter surgery, all covered in the adoption fee. <br/><br/>
                             If services are not provided, a free veterinary visit often is included in the adoption fee.
                         </p>    
                     </div>
@@ -86,7 +86,7 @@
 
                         <p class="cardText" id="shelters">
                             Organizations like animal shelters, humane societies, and rescue leagues will 
-                            house and care for owner-surrendered, abandoned, stray and injured animals. <br /><br /> 
+                            house and care for owner-surrendered, abandoned, stray and injured animals. <br/><br/> 
                             Many organizations also rehabilitate abused animals to help them recover and find a loving home.
                         </p>
                     </div>
@@ -102,7 +102,7 @@
                         
                         <p class="cardText" id="helterMap">
                             The Helter-Shelter Map below contains pinned locations throughout New Hampshire. 
-                            You can click on each pin to find the name and location of each organization. <br /><br /> 
+                            You can click on each pin to find the name and location of each organization. <br/><br/> 
                             Can you find your local animal shelter on the map?
                         </p>
                     </div>
@@ -115,15 +115,14 @@
         </div>
             <div class="mapContainer">
                 <div id="map-display"></div>
-                <script src="map.js" type="text/javascript"></script>
             </div>
 
-            <table>
-                <!-- data populates this field -->
-            </table>
-
-            <script src="mapTable.js" type="text/javascript"></script>
-
+                <button class="button-collapsible" title="Click to expand data table"></button>
+                    <div class="dataTable">
+                        <table>
+                            <!-- shelter data table populated by JavaScript -->
+                        </table>
+                    </div>
 
         <div class="contactContainer">
             <img src="media/paws-left.png" class="paws" alt="Paws Decorative Image" style="float: left; margin: 0; width: 10em; padding-top: 12%;">
@@ -152,8 +151,11 @@
 
             <!-- Client side data validation for contact form -->
             <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-
             <script src="dataValidation.js" type="text/javascript"></script>
+
+            <script src="map.js" type="text/javascript"></script>
+            <script src="mapTable.js" type="text/javascript"></script>
+
         </div>
     </body>
 
