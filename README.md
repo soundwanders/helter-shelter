@@ -23,9 +23,11 @@
 - The Shelter Map has pins added to relevant locations across the state.
 - Click each pinned location to reveal the organization's name and location.
 - CSS Flexbox used to achieve responsive design.
+- Data table generated with JavaScript
+     - Table fields are populated by looping through an array of Objects.
 
 ### Technology
-- HTML, CSS, JavaScript, Leaflet.js
+- HTML, CSS, JavaScript, PHP, Leaflet.js
 
 <code>Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. 
 Weighing just about 39 KB of JS, it has all the mapping features most developers ever need. 
