@@ -519,6 +519,26 @@ label {
         font-size: 3em;
     }
 
+        table {
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        th {
+            padding: 1em;
+            border: 3px solid black;
+            background-color: #ffd96d;
+            color: #000;
+            font-family: 'Montserrat', 'Lucida Sans', sans-serif;
+            font-size: 1em;
+            letter-spacing: 0;
+        }
+
+        td {
+            padding: 1em;
+            border: 2px solid black;
+        }
+
     .contactInput {
         width: 60%;
     }
