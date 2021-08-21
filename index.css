@@ -416,6 +416,10 @@ label {
         width: 90%;
     }
 
+    .button-collapsible {
+        font-size: 3em;
+    }
+
     .contactInput {
         width: 60%;
     }
@@ -459,6 +463,11 @@ label {
 
     .mapTitle {
         font-size: 2em;
+    }
+
+
+    .button-collapsible {
+        font-size: 3em;
     }
 
     .contactHeader {
