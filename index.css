@@ -155,7 +155,6 @@ li a:hover {
         .cardIcons {
             display: inherit;
             width: 60%;
-            height: auto;
             margin: auto;
             margin-top: 12%;
         }
@@ -362,6 +361,18 @@ label {
     opacity: 0.9;
 }
 
+/* Reduce card image width on smaller mobile devices such as the the iPhone 5 */
+@media only screen and (min-height: 320px) and (max-width: 568px) {
+    .cardIcons {
+        width: 45%;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Mobile device media query, set to capture all devices up to the largest mobile phones, 
+    with a buffer to the height px to allow for future devices increasing in size */
 @media only screen and (min-height: 360px) and (max-width: 968px) {
     .cardContainer {
         padding: 2%;
@@ -450,7 +461,7 @@ label {
     }
 }
 
-/* Medium devices (landscape mode mobile */
+/* Landscape mode mobile adjustments...mostly font size scaling  */
 @media only screen and (max-height: 440px) and (min-width: 568px) { 
     h2 {
         font-size: 1.5em;
@@ -462,9 +473,8 @@ label {
     }
 
     .mapTitle {
-        font-size: 2em;
+        font-size: 3em;
     }
-
 
     .button-collapsible {
         font-size: 3em;

@@ -77,6 +77,7 @@ let mapData =
     generateTableHead(table, data);
 
 // Collapsible Data Table Functionality
+// calculates screen size 
 const collapse = document.getElementsByClassName("button-collapsible");
 let i;
 
