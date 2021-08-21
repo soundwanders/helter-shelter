@@ -59,7 +59,7 @@ li a:hover {
 }
 
 /* main content wrapper, flex container sits below banner and holds content cards */
-.flexWrapper {
+.cardWrapper {
     display: flex;
     width: 100%;
     height: 55%;
@@ -286,7 +286,7 @@ li a:hover {
                 justify-content: center;
                 background-color: whitesmoke;
                 max-height: 0;
-                padding: 0 1em;
+                padding: 2em 1em;
                 overflow: hidden;
                 -webkit-transition: max-height 0.2s ease-out;
                 transition: max-height 0.2s ease-out;
@@ -294,6 +294,33 @@ li a:hover {
 
                 table {
                     padding: 2em 1em;
+                    border-collapse: collapse;
+                }
+                
+                th {
+                    padding: 1em;
+                    border: 3px solid black;
+                    background-color: #ffd96d;
+                    color: #000;
+                    font-family: 'Montserrat', 'Lucida Sans', sans-serif;
+                    font-size: 1.75em;   
+                    letter-spacing: 2px;
+                }
+
+                td {
+                    padding: 1em;
+                    border: 2px solid black;
+                }
+
+                tr:nth-child(odd) {
+                    padding: 1em;
+                    background-color: whitesmoke;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                }
+
+                tr:nth-child(even) {
+                    background-color:#ffecb8;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 }
 
 .contactContainer {
