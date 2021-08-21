@@ -62,7 +62,7 @@ li a:hover {
 .flexWrapper {
     display: flex;
     width: 100%;
-    height: 50%;
+    height: 60%;
     margin: 0 auto;
     background-color: whitesmoke;
 }
@@ -76,7 +76,8 @@ li a:hover {
         width: 100%;
         justify-content: space-evenly;
         vertical-align: middle;
-        padding-top: 2%;
+        padding: 3%;
+        padding-bottom: 4em;
         overflow: hidden;
         background: transparent;
         perspective: 1000px;
@@ -90,6 +91,10 @@ li a:hover {
             -webkit-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             -moz-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
             box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
+
+            -webkit-transition-duration: 0.8s;
+            -webkit-transition-timing-function: ease-in-out;
+            -webkit-transform-style: preserve-3d;
             transition-duration: 0.8s;
             transition-timing-function: ease-in-out;
             transform-style: preserve-3d;
@@ -98,6 +103,7 @@ li a:hover {
 
         /* Rotate card on hover */
         .contentCard:hover , .cards-front {
+            -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
         }
 
@@ -113,6 +119,7 @@ li a:hover {
                 justify-content: center;
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
+                -webkit-transform: rotateX(0deg);
                 transform: rotateX(0deg);
             }
 
@@ -124,6 +131,7 @@ li a:hover {
                 background-color: #fff;
                 color: #493979;
                 overflow-x: hidden;
+                -webkit-transform: rotateY(180deg);
                 transform: rotateY(180deg);
             }
             /* card text content style adjustments to achieve desired display */
@@ -152,7 +160,7 @@ li a:hover {
 
         /* Front of card svg icons */
         .cardIcons {
-            display: inherit;
+            display: flex;
             width: 60%;
             margin: auto;
             margin-top: 12%;
@@ -163,7 +171,7 @@ li a:hover {
     width: 100%;
     max-height: 20%;
     justify-content: center;
-    padding: 2% 0;
+    padding: 1% 0 2% 0;
     background-color: whitesmoke;
 }
 
@@ -237,7 +245,8 @@ li a:hover {
     }
 
     #reset:active {
-        transform: scale(.9975);
+        -webkit-transform: scale(.998);
+        transform: scale(.998);
     }
 
         .button-collapsible {
@@ -247,7 +256,8 @@ li a:hover {
             outline: none;
             background-color: #493979;
             color: white;
-            font-size: 8em;
+            font-size: 5em;
+            line-height: 1em;
             text-align: center;
             overflow: hidden;
         }
@@ -257,6 +267,7 @@ li a:hover {
         }
 
         .button-collapsible:active {
+            -webkit-transform: scale(1.01);
             transform: scale(1.01);
         }
 
@@ -278,6 +289,7 @@ li a:hover {
                 max-height: 0;
                 padding: 0 1em;
                 overflow: hidden;
+                -webkit-transition: max-height 0.2s ease-out;
                 transition: max-height 0.2s ease-out;
             }
 
@@ -400,12 +412,13 @@ label {
 }
 
 .icons:hover {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
     opacity: 0.9;
 }
 
 /* Reduce card image width on small mobile devices */
-@media only screen and (max-height: 340px) and (max-width: 568px) {
+@media only screen and (max-height: 568px) and (min-width: 570px) {
     .cardIcons {
         width: 45%;
     }
