@@ -33,8 +33,8 @@
   - Table fields are populated by looping through an array of Objects and appending
 - Page design achieved with CSS Flexbox with a focus on responsive design and web accessibility.
   - Use of responsive values (such as %) to help thin out the amount of media queries required to achieve design.
-- Images compressed with <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
-- Built with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
+- Lossless image compression using <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
+- Bundled with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
 
 ### Technology
 - HTML, CSS, JavaScript, Leaflet.js, Webpack
