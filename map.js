@@ -136,7 +136,7 @@ for (let i = 0; i < pins.length; i++) {
 };
 
 // Reset the map to the initial view/zoom level
-const resetBtn = document.getElementById("reset");
+const resetBtn = document.getElementById("resetButton");
 
 resetBtn.addEventListener('click', function() {
     shelterMap.flyTo([43.441086332706374, -71.82000972872403] , 8);
