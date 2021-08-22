@@ -19,15 +19,17 @@
 
 ### About Helter-Shelter
 
-- Helter-Shelter Animal Oasis is a site promoting New Hampshire animal shelters and humane societies.
+- Helter-Shelter is a site supporting and raising awareness for New Hampshire animal shelters and rescue organizations.
 - The Shelter Map has pins added to relevant locations across the state.
 - Click each pinned location to reveal the organization's name and location.
-- CSS Flexbox used to achieve responsive design.
-- Data table generated with JavaScript
-     - Table fields are populated by looping through an array of Objects.
+- Collapsible data table generated with JavaScript, just click the '+' button to expand the table.
+  - Table fields are populated by looping through an array of Objects and appending
+- Page design achieved with CSS Flexbox with a focus on responsive design and accessibility.
+  - Use of responsive values (such as %) to reduce the need for a mass of media queries.
+    - A majority of the media queries address white-space issues and font-size adjustments.
 
 ### Technology
-- HTML, CSS, JavaScript, PHP, Leaflet.js
+- HTML, CSS, JavaScript, PHP, Leaflet.js,
 
 <code>Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. 
 Weighing just about 39 KB of JS, it has all the mapping features most developers ever need. 
