@@ -7,8 +7,6 @@
 
 <div align="center"> 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7a2ca23b-0fe6-4a24-8fce-e52cd745c819/deploy-status)](https://app.netlify.com/sites/heltershelter/deploys)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
@@ -39,7 +37,7 @@
 - Built with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
 
 ### Technology
-- HTML, CSS, JavaScript, PHP, Leaflet.js, Webpack
+- HTML, CSS, JavaScript, Leaflet.js, Webpack
 
 <code>Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. 
 Weighing just about 39 KB of JS, it has all the mapping features most developers ever need. 
