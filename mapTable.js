@@ -59,6 +59,7 @@ let mapData =
             row.appendChild(th);
         }
     };
+
     const generateTable = (table, data) => {
         for (let element of data) {
             let row = table.insertRow();
@@ -77,8 +78,8 @@ let mapData =
     generateTableHead(table, data);
 
 // Collapsible Data Table Functionality
-// calculates screen size 
-const collapse = document.getElementsByClassName("button-collapsible");
+// calculates screen size to create a slide down effect on table expansion
+const collapse = document.getElementsByClassName("collapseTableButton");
 let i;
 
 for (i = 0; i < collapse.length; i++) {

@@ -11,24 +11,24 @@ zoomOffset: -1,
 accessToken: 'pk.eyJ1Ijoic291bmR3YW5kZXJzIiwiYSI6ImNrcmpsZmFkaTcwcWEzMW10MXBpbXdrdTMifQ.BCHaQ4HmyW_TKhwQsxRbAQ'
 }).addTo(shelterMap);
 
+// override Leaflet default icon to pass custom icon parameters
 const iconOptions = {
     iconUrl: 'media/icons/map-icon.png' ,
-    iconSize: [30, 30
-    ] ,
- }
- 
- // Creating a custom icon
+    iconSize: [ 30, 30 ] ,
+};
+
+// Assigning the custom icon paramaters to a new Icon variable
 const smallIcon = L.icon(iconOptions);
 
-// Options for the marker
+// Set options for the map markers
 const markerOptions = {
     title: this.value ,
     clickable: true ,
     draggable: false ,
     icon: smallIcon ,
- }
+};
 
-// Array of pins to enable use of a for loop to create multiple markers
+// Create an array of data then loop through to create a pin for each location using bind
 let pins =
     [
         [
@@ -135,7 +135,7 @@ for (let i = 0; i < pins.length; i++) {
         .addTo(shelterMap);
 };
 
-
+// Reset the map to the initial view/zoom level
 const resetBtn = document.getElementById("reset");
 
 resetBtn.addEventListener('click', function() {
