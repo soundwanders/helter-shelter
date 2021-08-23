@@ -30,10 +30,10 @@
 - The Shelter Map has pins added to relevant locations across the state.
 - Click each pinned location to reveal the organization's name and location.
 - Collapsible data table generated with JavaScript, just click the '+' button to expand the table.
-  - Table fields are populated by looping through an array of Objects and appending
+  - Table fields are populated by looping through an array of Objects and appending the data to display.
 - Page design achieved with CSS Flexbox with a focus on responsive design and web accessibility.
-  - Use of responsive values (such as %) to help thin out the amount of media queries required to achieve design.
-- Lossless image compression using <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
+  - Use of responsive values (such as % and em) to limit the amount of media queries required.
+- Lossless image compression thanks to <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
 - Bundled with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
 
 ### Technology
