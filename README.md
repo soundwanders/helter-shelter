@@ -49,7 +49,7 @@ use and well-documented API and a simple, readable source code that is a joy to 
 ### Contributing
 If you have any ideas, improvements, suggestions or issues with the project please feel free to contribute &smile;
 
-1. Fork the Project
+1. Fork the Project from branch 'main'
 2. Create your Update Branch (`git checkout -b update/ThisIsBetter`)
 3. Commit your Changes (`git commit -m 'Hey change this!'`)
 4. Push to the Branch (`git push origin update/BugSquash`)
