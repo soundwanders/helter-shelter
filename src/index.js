@@ -4,6 +4,6 @@ const mapTable = require('./mapTable.js');
 const dataValidation = require('./dataValidation.js');
 
 style;
-leafletMap();
-mapTable();
-dataValidation();
+leafletMap;
+mapTable;
+dataValidation;
