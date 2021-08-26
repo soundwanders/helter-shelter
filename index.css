@@ -621,6 +621,10 @@ li.navItem {
         font-size: 3em;
     }
 
+    td {
+        text-align: center;
+    }
+
     .contactHeader {
         font-size: 2em;
     }
