@@ -1,9 +1,9 @@
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import "./index.css";
+import 'leaflet/dist/leaflet.js';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+import './index.css';
 
-function leafletMap() {
-
+export function leafletMap() {
   const shelterMap = L.map('map-display').setView([43.441086332706374, -71.82000972872403], 8);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -23,7 +23,7 @@ function leafletMap() {
     iconSize: [30, 30]
   };
 
-  // Assigning the custom icon paramaters to a new Icon variable
+  // Assigning the custom icon paramaters to a new Icon constiable
   const smallIcon = L.icon(iconOptions);
 
   // Set options for the map markers
@@ -146,7 +146,6 @@ function leafletMap() {
   resetBtn.addEventListener('click', function () {
     shelterMap.flyTo([43.441086332706374, -71.82000972872403], 8);
   });
-
 };
 
 module.exports = leafletMap;

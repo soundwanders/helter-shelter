@@ -1,8 +1,4 @@
-import "./index.css";
-
-function dataValidation() {
-
-  const constraints = {
+const constraints = {
     name: {
       presence: { allowEmpty: false }
     },
@@ -50,6 +46,3 @@ function dataValidation() {
       alert('Message sent. We will respond shortly, thank you!');
     }
   }, false);
-};
-
-module.exports = dataValidation;

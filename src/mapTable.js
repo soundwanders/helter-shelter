@@ -1,6 +1,6 @@
-import "./index.css";
+import './index.css';
 
-function mapTable() {
+export function mapTable() {
 
   const mapData =
       [
@@ -81,8 +81,7 @@ function mapTable() {
   generateTable(table, mapData);
   generateTableHead(table, data);
 
-  // Collapsible Data Table Functionality
-  // calculates screen size to create a slide down effect on table expansion
+  // Calculate screen size to create a slide down effect on data table show/hide
   const collapse = document.getElementsByClassName('collapseTableButton');
   let i;
 

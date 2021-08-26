@@ -1,17 +1,19 @@
 const path = require('path');
 const port = process.env.PORT || 3000;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const isDev = process.env.NODE_ENV !== "prod";
+
 
 module.exports = {
   mode:'production',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
-    './src/index.js' 
+    './src/index.js',
   ],
-
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: "/dist",
     clean: true,
   },
   resolve: {
@@ -30,26 +32,25 @@ module.exports = {
     rules: 
     [
       {
-        test: /\.css$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: true
-            }
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: [
+              '@babel/plugin-transform-runtime',
+              '@babel/plugin-syntax-dynamic-import',
+              '@babel/plugin-transform-async-to-generator',
+              '@babel/plugin-transform-regenerator'
+            ]
           }
-        ],
-        include: /\.module\.css$/
+        },
       },
 
       {
         test: /\.css$/i,
-        use: [
-          'style-loader','css-loader',
-        ],
-        exclude: /\.module\.css$/
+        use: ["style-loader", "css-loader"],
       },
 
       {
@@ -59,12 +60,22 @@ module.exports = {
           loader: 'file-loader',
         },
         ],
-      },
+      }
     ],
   },
+
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./index.html"
-    })
+    new HtmlWebpackPlugin(
+      {
+        template: './index.html',
+        minify: !isDev && {
+          html5: true,
+          collapseWhitespace: true,
+          caseSensitive: true,
+          removeComments: true,
+          removeEmptyElements: false
+        }
+      },
+    ),
   ],
 };
