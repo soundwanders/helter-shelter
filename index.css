@@ -532,7 +532,7 @@ li.navItem {
         margin: 0 auto;
 
     }
-    
+
     li.navItem {
         margin: 0 2%;
     }
@@ -553,16 +553,6 @@ li.navItem {
 
     table {
         font-size: 12px;
-    }
-
-    th {
-        border: 2px solid black;
-        font-size: 1em;
-        letter-spacing: initial;
-    }
-
-    td {
-        border: 2px solid black;
     }
 
     .contactInput {

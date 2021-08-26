@@ -25,7 +25,7 @@
 - [ ] Table data is accessible to non-sighted users
 - [ ] Use ARIA landmarks where applicable
 - [ ] Decorative images should not be visible to screen readers
-- [ ] Pages are understandable with no styles enabled
+- [x] Pages are understandable with no styles enabled
 - [ ] Web page size should not exceed 500k
 - [x] HTML should be valid and error-free
 
