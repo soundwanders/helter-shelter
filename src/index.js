@@ -41,7 +41,7 @@ import './index.css';
 
   // override Leaflet default icon to pass custom icon parameters
   const iconOptions = {
-    iconUrl: 'media/icons/map-icon.png',
+    iconUrl: './assets/icons/map-icon.png',
     iconSize: [30, 30]
   };
 
