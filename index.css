@@ -67,8 +67,8 @@ li.navItem {
 .cardWrapper {
     display: flex;
     width: 100%;
-    height: 50vh;
-    background-color: whitesmoke;
+    height: 60%;
+    background-color: #f5f5f5;
 }
 
 .cardContainer {
@@ -89,16 +89,11 @@ li.navItem {
         display: flex;
         width: 20%;
         height: 40vh;
-        -webkit-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
-        -moz-box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
-        box-shadow: 5px 7px 20px 4px rgba(0,0,0,0.3);
-
+        -webkit-box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
+        box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
         -webkit-transition-duration: 0.8s;
         -webkit-transition-timing-function: ease-in-out;
         -webkit-transform-style: preserve-3d;
-        -moz-transition-duration: 0.8s;
-        -moz-transition-timing-function: ease-in-out;
-        -moz-transform-style: preserve-3d;
         transition-duration: 0.8s;
         transition-timing-function: ease-in-out;
         transform-style: preserve-3d;
@@ -148,28 +143,38 @@ li.navItem {
             transform: rotateY(180deg);
         }
 
-        h2 {
-            font-size: 3em;
+        h2.cardTitle {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            margin-bottom: 3em;
+            padding: 0.5em;
+            font-size: 3.25em;
             line-height: 2em;
             text-align: center;
-            margin: 1em;
-            margin-bottom: 1.9em;
         }
+/*             
+            h2#furballs {
+                margin: 0.5em 1em;
+                margin-bottom: 3.25em;
+            }
 
             h2#happy {
-                margin: 1.75em 1em 1.9em 1em;
+                margin: 0.675em 1em 2em 1em;
             }
 
             h2#leftBehind {
                 margin: 0.5em 1em;
-                margin-bottom: 1.5em;
+                margin-bottom: 1.75em;
             }
                 
             h2#helterCard {
                 margin: 1em 0.5em;
-                margin-bottom: 1.9em;
-            }
-        
+                margin-bottom: 3em;
+            } */
+
         p.cardText {
             margin: 3em;
         }
@@ -181,7 +186,7 @@ li.navItem {
     justify-content: center;
     padding: 1% 0 1% 0;
     margin: 0;
-    background-color: whitesmoke;
+    background-color: #f5f5f5;
 }
 
     .mapTitle {
@@ -204,7 +209,7 @@ li.navItem {
             justify-content: center;
             white-space: no-wrap;
             overflow: hidden;
-            background-color: whitesmoke;
+            background-color: #f5f5f5;
             padding-bottom: 1em;
         }
 
@@ -226,7 +231,7 @@ li.navItem {
             justify-content: center;
             width: 100%;
             overflow: hidden;
-            background-color: whitesmoke;
+            background-color: #f5f5f5;
             padding-bottom: 2em;
         }
 
@@ -247,6 +252,8 @@ li.navItem {
                 overflow: hidden;
                 margin: 0 auto;
                 cursor: pointer;
+                -webkit-box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2);
+                box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2);
             }
 
             #resetButton:hover {
@@ -295,7 +302,7 @@ li.navItem {
     .dataTable {
         display: none;
         justify-content: center;
-        background-color: whitesmoke;
+        background-color: #f5f5f5;
         max-height: 0;
         padding: 2em 1em;
         overflow: hidden;
@@ -306,9 +313,8 @@ li.navItem {
         table {
             padding: 2em 1em;
             border-collapse: collapse;
-            box-shadow: 10px 16px 22px 6px rgba(0,0,0,0.05);
-            -webkit-box-shadow: 10px 16px 22px 6px rgba(0,0,0,0.05);
-            -moz-box-shadow: 10px 16px 22px 6px rgba(0,0,0,0.05);
+            -webkit-box-shadow: 2px 6px 14px 6px rgba(0,0,0,0.075);
+            box-shadow: 2px 6px 14px 6px rgba(0,0,0,0.075);
         }
             
             th {
@@ -330,7 +336,7 @@ li.navItem {
 
             tr:nth-child(odd) {
                 padding: 1em;
-                background-color: whitesmoke;
+                background-color: #f5f5f5;
             }
 
             tr:nth-child(even) {
@@ -465,18 +471,18 @@ li.navItem {
         }
 
 /* Reduce card image width on small mobile devices */
-@media only screen and (max-height: 568px) and (min-width: 570px) and (orientation: portrait) {
+@media only screen and (max-height: 5614px) and (min-width: 570px) and (orientation: portrait) {
     .cardIcons {
         width: 45%;
     }
-    h2 {
+    h2.cardTitle {
         font-size: 1.5em;
     }
 }
 
 /* Mobile device media query, set to capture all devices up to the largest mobile phones, 
     with a buffer to the height px to allow for future devices increasing in size */
-@media only screen and (min-height: 360px) and (max-width: 968px) and (orientation: portrait) {
+@media only screen and (min-height: 360px) and (max-width: 9614px) and (orientation: portrait) {
     #navLogo {
         padding: 1.5%;
     }
@@ -494,25 +500,17 @@ li.navItem {
         flex-wrap: wrap;
     }
 
-    h2 {
+    h2.cardTitle {
+        position: relative;
+        top: 50%;
+        left: 50%;
         font-size: 1.75em;
-        margin: 1em;
-        margin-bottom: 1.375em;
-    }
-
-    h2#happy {
-        margin: 1em;
-        margin-bottom: 1.3em;
-    }
-
-    h2#leftBehind {
-        margin: 1em 0.375em;
-        margin-bottom: 1.375em;
-    }
-
-    h2#helterCard {
-        margin: 1em;
-        margin-bottom: 1.375em;
+        line-height: 1.675em;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        margin-bottom: 1.75em;
+        padding: 0.5em;
     }
 
     p.cardText {
@@ -588,20 +586,12 @@ li.navItem {
 }
 
 /* Landscape mode mobile adjustments  */
-@media only screen and (max-height: 440px) and (min-width: 568px) and (orientation: landscape) { 
-    h2 {
+@media only screen and (max-height: 440px) and (min-width: 5614px) and (orientation: landscape) { 
+    h2.cardTitle {
         font-size: 1.5em;
         line-height: 1.675em;
-    }
-
-    h2#leftBehind {
-        margin: 1em 1em;
         margin-bottom: 1.75em;
-    }
-        
-    h2#helterCard {
-        margin: 1em 0.75em;
-        margin-bottom: 1.75em;
+        padding: 0.5em;
     }
 
     p.cardText {
