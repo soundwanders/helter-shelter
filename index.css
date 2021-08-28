@@ -155,7 +155,7 @@ li.navItem {
             line-height: 2em;
             text-align: center;
         }
-/*             
+/*       
             h2#furballs {
                 margin: 0.5em 1em;
                 margin-bottom: 3.25em;
@@ -501,15 +501,9 @@ li.navItem {
     }
 
     h2.cardTitle {
-        position: relative;
-        top: 50%;
-        left: 50%;
         font-size: 1.75em;
         line-height: 1.675em;
-        text-align: center;
-        transform: translate(-50%, -50%);
-        margin: 0 auto;
-        margin-bottom: 1.75em;
+        margin-bottom: 2.125em;
         padding: 0.5em;
     }
 
