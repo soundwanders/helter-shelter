@@ -316,7 +316,7 @@ li.navItem {
                 border: 2px solid #d2d2ff;
                 background-color: #d2d2ff;
                 color: #000;
-                font-family: 'Montserrat', 'Lucida Sans', sans-serif;
+                font-family: 'Montserrat', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
                 font-size: 1.75em;
                 letter-spacing: 2px;
             }

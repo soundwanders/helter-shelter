@@ -1,6 +1,7 @@
 const path = require('path');
 const port = process.env.PORT || 3000;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDev = process.env.NODE_ENV !== "prod";
 
 
@@ -13,11 +14,13 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: "/dist",
+    publicPath: '/dist',
     clean: true,
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.jsx' ]
+    extensions: [ 
+      '.js', '.jsx' 
+    ]
   },
   devServer: {
     static: {
@@ -39,10 +42,7 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
             plugins: [
-              '@babel/plugin-transform-runtime',
               '@babel/plugin-syntax-dynamic-import',
-              '@babel/plugin-transform-async-to-generator',
-              '@babel/plugin-transform-regenerator'
             ]
           }
         },
@@ -51,20 +51,18 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
-      },
 
+        use: [ isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
+      },
       {
-        test: /\.(png|svg|jpg|gif)$/i,
-        use: [
-        {
-          loader: 'file-loader',
-        },
-        ],
-      }
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin(
       {
         template: './index.html',
