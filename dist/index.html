@@ -5,36 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta property="title" content="Helter-Shelter"/>
     <meta name="author" content="soundwanders"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *;">
     <meta name="description" content=
     "Helter-Shelter is a site focusing on raising awareness and supporting 
-    animal shelters and rescue organizations throughout the state of New Hampshire." />
+    pet rescue organizations and animal shelters who not only battle full 
+    kennels and crammed cages, but also compete with breeders that do not place 
+    the health, safety and happiness of their animals as a high priority." />
     <meta name="keywords" content="animal, shelter, NH, new-hampshire, animals, pets, adoption, animal rescue, dogs, cats"/>
     <meta name="theme-color" content="#d2d2ff">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"> 
 
-    <link rel="icon" type="image/png" href="media/icons/favicon.png"/>
-    <link rel="icon" type="image/ico" href="media/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="./src/assets/icons/favicon.png"/>
+    <link rel="icon" type="image/ico" href="./src/assets/icons/favicon.ico"/>
 
-    <link rel="stylesheet" href="index.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="./src/index.css"/>
+
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin="">
-    </script>
-
+    <script defer src="/dist/bundle.js"></script>
 </head>
 
 <header>
     <div id="navbar">
         <ul>
-            <li class="navItem" id="navLogo"><img id="logoIcon" src="media/icons/navLogo.svg" alt="Helter-Shelter Logo"/></li>
+            <li class="navItem" id="navLogo"><img id="logoIcon" src="./assets/icons/navLogo.svg" alt="Helter-Shelter Logo"/></li>
             <li class="navItem" id="contactNav"><a href="#contact">Contact</a></li>
             <li class="navItem" id="shelterNav"><a href="#shelterMap">Shelter Map</a></li>
             <li class="navItem" id="aboutNav"><a href="#about">About</a></li>
@@ -46,14 +45,14 @@
 <body>
 
 <div class="bannerContainer">
-    <img class="bannerImage" src="media/banner.png" alt="Banner Image" />
+    <img class="bannerImage" src="./assets/banner.png" alt="Banner Image" />
 </div>
 
     <div class="cardWrapper" id="about">
         <div class="cardContainer">
             <div class="contentCard">           
                 <div class="cards-front" id="adopt">
-                    <img class="cardIcons" src="media/cards/baby.svg" alt="Baby Pet Image"/>
+                    <img class="cardIcons" src="./assets/cards/baby.svg" alt="Baby Pet Image"/>
                 </div>
 
                 <div class="cards-back">
@@ -69,7 +68,7 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="medicine">
-                    <img class="cardIcons" src="media/cards/medicine.svg" alt="Medicine Image"/>
+                    <img class="cardIcons" src="./assets/cards/medicine.svg" alt="Medicine Image"/>
                 </div>
 
                 <div class="cards-back">
@@ -85,7 +84,7 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="home">
-                    <img class="cardIcons" src="media/cards/home.svg" alt="Dog House Image"/>
+                    <img class="cardIcons" src="./assets/cards/home.svg" alt="Dog House Image"/>
                 </div>
 
                 <div class="cards-back">
@@ -101,16 +100,17 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="map">
-                    <img class="cardIcons" src="media/cards/map.svg" alt="Map Image"/>
+                    <img class="cardIcons" src="./assets/cards/map.svg" alt="Map Image"/>
                 </div>
 
                 <div class="cards-back">
-                    <h2 class="cardTitle" id="helterCard">Helter Shelter</h2>
-                        <p class="cardText" id="helterMap">
-                            The Helter-Shelter Map below contains pinned locations throughout New Hampshire. 
-                            You can click on each pin to find the name and location of each organization. <br/><br/> 
-                            Can you find your local animal shelter on the map?
-                        </p>
+                    <h2 class="cardTitle" id="helterCard">Helter-Shelter</h2>
+                    
+                    <p class="cardText" id="helterMap">
+                        The Helter-Shelter Map below contains pinned locations throughout New Hampshire. 
+                        You can click on each pin to find the name and location of each organization. <br/><br/> 
+                        Can you find your local animal shelter on the map?
+                    </p>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
             <button id="resetButton" title="Click to reset map to initial view">Reset Map View</button>
         </div>
 
-<button class="collapseTableButton" title="Click to expand data table"></button>
+<button id="collapseTableButton" title="Click to expand data table"></button>
 
 <div class="dataTable">
     <table>
@@ -136,21 +136,10 @@
     </table>
 </div>
 
-<div class="carousel">
-    <ul class="gallery">
-      <li style="background: #f6bd60;"></li>
-      <li style="background: #f7ede2;"></li>
-      <li style="background: #f5cac3;"></li>
-      <li style="background: #84a59d;"></li>
-      <li style="background: #f28482;"></li>
-    </ul>
-</div>
-
-
 <div class="contactContainer">
-    <img src="media/paws-left.png" class="paws left" alt="Paws Decorative Image" style="float: left;">
+    <img src="./assets/paws-left.png" class="paws left" alt="Paws Decorative Image" style="float: left;">
 
-    <img src="media/paws-right.png" class="paws right" alt="Paws Decorative Image" style="float: right;">
+    <img src="./assets/paws-right.png" class="paws right" alt="Paws Decorative Image" style="float: right;">
 
     <div class="contactHeader" id="contact">
         <h1>Contact Us!</h1>
@@ -174,12 +163,10 @@
     </form>
 </div>
 
-    <!-- Client side data validation for contact form -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    <script src="dataValidation.js" type="text/javascript"></script>
-    <!-- Load Leaflet map and data table -->
-    <script src="map.js" type="text/javascript"></script>
-    <script src="main.js" type="text/javascript"></script>
+<!-- Client side data validation for contact form
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> -->
+
+<script src="/dist/bundle.js"></script>
 
 </body>
 
@@ -206,30 +193,30 @@
     <ul class="footerLogos">
         <li class="footerLink">
             <a href="https://www.facebook.com" link="noopener noreferral">
-                <img class="icons" src="media/icons/facebook.svg" alt="Facebook Logo Link" />
+                <img class="icons" src="./assets/icons/facebook.svg" alt="Facebook Logo Link" />
             </a>
         </li>
 
         <li class="footerLink">
-            <a href="https://github.com" link="noopener noreferral"> <img class="icons" src="media/icons/github.svg"
+            <a href="https://github.com" link="noopener noreferral"> <img class="icons" src="./assets/icons/github.svg"
                 style="background-color: #fff; border-radius: 8px;" alt="Github Logo Link" />
             </a>
         </li>
 
         <li class="footerLink">
             <a href="https://www.instagram.com" link="noopener noreferral">
-                <img class="icons" src="media/icons/instagram.svg" alt="Instagram Logo Link" />
+                <img class="icons" src="./assets/icons/instagram.svg" alt="Instagram Logo Link" />
             </a>
         </li>
 
         <li class="footerLink">
             <a href="https://twitter.com" link="noopener noreferral">
-                <img class="icons" src="media/icons/twitter.svg" alt="Twitter Logo Link" />
+                <img class="icons" src="./assets/icons/twitter.svg" alt="Twitter Logo Link" />
             </a>
         </li>
     </ul>
 </footer>
 
-    <noscript>Please enable JavaScript to view the full Helter-Shelter website. Thank you!</noscript>
+    <noscript>Please enable JavaScript to view the Helter-Shelter map or send an E-mail using the contact form. Thank you!</noscript>
 
 </html>

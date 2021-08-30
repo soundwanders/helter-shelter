@@ -99,3 +99,36 @@ for (i = 0; i < collapse.length; i++) {
     }
   });
 }
+
+// carousel slider
+const slider = document.querySelector('.carousel');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', e => {
+  isDown = true;
+  slider.classList.add('activeCarousel');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', _ => {
+  isDown = false;
+  slider.classList.remove('activeCarousel');
+});
+
+slider.addEventListener('mouseup', _ => {
+  isDown = false;
+  slider.classList.remove('activeCarousel');
+});
+
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+
+  const x = e.pageX - slider.offsetLeft;
+  const scrollSpeed = 3;
+  const walk = (x - startX) * scrollSpeed;
+  slider.scrollLeft = scrollLeft - walk;
+});
