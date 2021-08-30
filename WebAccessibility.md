@@ -3,7 +3,7 @@
 - [x] Images should have meaningful alternative text
 - [x] Links should be visually identifiable
 - [x] Use descriptive section headings
-- [ ] Use correct semantic HTML element structure for your content
+- [x] Use correct semantic HTML element structure for your content
 - [ ] Forms have descriptive labels
 - [x] Text and background color should have sufficient contrast
 - [x] Content scales properly when zoomed/enlarged

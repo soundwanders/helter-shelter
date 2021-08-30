@@ -43,7 +43,9 @@
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.2.0",
     "npm": "^7.21.1",
+    "requirejs": "^2.3.6",
     "style-loader": "^3.2.1",
+    "validate.js": "^0.13.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0"

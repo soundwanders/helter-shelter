@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta property="title" content="Helter-Shelter"/>
     <meta name="author" content="soundwanders"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src *;">
     <meta name="description" content=
     "Helter-Shelter is a site focusing on raising awareness and supporting 
     pet rescue organizations and animal shelters who not only battle full 
@@ -26,6 +27,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
+    <script defer src="/dist/bundle.js"></script>
 <script defer src="/dist/bundle.js"></script></head>
 
 <header>
@@ -161,10 +163,8 @@
     </form>
 </div>
 
-    <!-- Client side data validation for contact form
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> -->
-
-<script src="/dist/bundle.js"></script>
+<!-- Client side data validation for contact form
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> -->
 
 </body>
 
