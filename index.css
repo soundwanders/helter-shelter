@@ -554,7 +554,7 @@ li.footerLink {
     h2.cardTitle {
         font-size: 1.75em;
         line-height: 1.75em;
-        margin-bottom: 2.5em;
+        margin-bottom: 2.75em;
         padding: 0.5em;
     }
 
@@ -601,7 +601,7 @@ li.footerLink {
     .gallery {
         height: 20vh;
     }
-    
+
     .contactInput {
         width: 60%;
     }
@@ -642,7 +642,7 @@ li.footerLink {
     h2.cardTitle {
         font-size: 1.5em;
         line-height: 1.675em;
-        margin-bottom: 1.75em;
+        margin-bottom: 2em;
         padding: 0.5em;
     }
 
