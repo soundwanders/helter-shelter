@@ -100,8 +100,8 @@ for (i = 0; i < collapse.length; i++) {
   });
 }
 
-// carousel slider
-const slider = document.querySelector('.carousel');
+// Carousel Slider
+const slider = document.querySelector('.carouselContainer');
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -113,12 +113,12 @@ slider.addEventListener('mousedown', e => {
   scrollLeft = slider.scrollLeft;
 });
 
-slider.addEventListener('mouseleave', _ => {
+slider.addEventListener('mouseup', _ => {
   isDown = false;
   slider.classList.remove('activeCarousel');
 });
 
-slider.addEventListener('mouseup', _ => {
+slider.addEventListener('mouseleave', _ => {
   isDown = false;
   slider.classList.remove('activeCarousel');
 });

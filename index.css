@@ -21,18 +21,16 @@ ul {
     background: #493979;
 }
 
-/* li elements for navbar and footer share style properties */
 li {
     display: flex;
     float: right;
-    margin: 0 2%;
 }
 
 li a {
     text-decoration: none;
     color: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
-    font-size: 1.75em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
     font-weight: 600;
     line-height: 2.5em;
 }
@@ -43,7 +41,11 @@ li a {
     }
 
 li.navItem {
-    margin: 0 5em 0 0;
+    margin: 0 4%;
+}
+
+li.footerLink {
+    margin: 0 2%;
 }
 
 #navLogo {
@@ -73,7 +75,7 @@ li.navItem {
 .cardWrapper {
     display: flex;
     width: 100%;
-    height: 60%;
+    height: 55%;
     background-color: #f5f5f5;
 }
 
@@ -94,13 +96,14 @@ li.navItem {
     .contentCard {
         display: flex;
         width: 20%;
+        min-height: 40vh;
         height: 40vh;
         -webkit-box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
         box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
-        -webkit-transition-duration: 0.8s;
+        -webkit-transition-duration: 0.9s;
         -webkit-transition-timing-function: ease-in-out;
         -webkit-transform-style: preserve-3d;
-        transition-duration: 0.8s;
+        transition-duration: 0.9s;
         transition-timing-function: ease-in-out;
         transform-style: preserve-3d;
     }
@@ -155,9 +158,9 @@ li.navItem {
             left: 50%;
             transform: translate(-50%, -50%);
             margin: 0 auto;
-            margin-bottom: 3em;
+            margin-bottom: 2.5em;
             padding: 0.5em;
-            font-size: 3.25em;
+            font-size: 3.75em;
             line-height: 2em;
             text-align: center;
         }
@@ -188,14 +191,14 @@ li.navItem {
 .mapTitleContainer {
     display: flex;
     width: 100%;
-    max-height: 20%;
     justify-content: center;
-    padding: 1% 0 1% 0;
+    padding: 1% 0 2% 0;
     margin: 0;
     background-color: #f5f5f5;
 }
 
     .mapTitle {
+        display: inherit;
         margin: 0 auto;
         text-align: center;
         text-decoration: underline;
@@ -204,9 +207,10 @@ li.navItem {
         font-size: 5em;
         font-weight: 600;
         color: #000;
+        padding: 2%;
     }
 
-        /* shelter map flex container */
+        /* map-display's parent div, flex container for leaflet map */
         .mapContainer {
             display: flex;
             flex-basis: 100%;
@@ -219,7 +223,7 @@ li.navItem {
             padding-bottom: 1em;
         }
 
-        /* leaflet.js map */
+        /* leaflet.js map display */
         #map-display {
             display: inherit;
             justify-content: center;
@@ -349,6 +353,44 @@ li.navItem {
                 background-color: #d2d2ff;
             }
 
+
+            .carouselContainer {
+                display: flex;
+                width: 100%;
+                margin: 0;
+                background: #f5f5f5;
+            }
+                .gallery {
+                    display: grid;
+                    grid-template-columns: repeat(6, 30vw);
+                    grid-template-rows: 1fr;
+                    grid-column-gap: 4rem;
+                    grid-row-gap: 1rem;
+                    width: 100%;
+                    height: 40vh;
+                    padding: 1rem;
+                    background: #f5f5f5;
+                    overflow: scroll;
+                    scroll-snap-type: both mandatory;
+                    scroll-padding: 1rem;
+                    scrollbar-width: none;
+                }
+            
+                    .gallery::-webkit-scrollbar {
+                        display: none;
+                    }
+            
+                    .activeCarousel {
+                        scroll-snap-type: unset;
+                    }
+            
+                    .carouselContainer {
+                        scroll-snap-align: center;
+                        display: inline-block;
+                        border-radius: 3px;
+                        font-size: 0;
+                    }
+
 .contactContainer {
     display: inherit;
     width: 100%;
@@ -365,8 +407,8 @@ li.navItem {
         text-decoration: underline;
         text-underline-offset: 0.25em;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 3.75em;
         font-weight: 600;
-        font-size: 2.75em;
         color: #000;
     }
 
@@ -441,6 +483,8 @@ li.navItem {
             }
 
 .helter-footer {
+    display: block;
+    width: 100%;
     background-color: #493979;
 }
 
@@ -459,7 +503,6 @@ li.navItem {
 
     .footerLogos {
         display: flex;
-        flex-basis: 100%;
         width: 100%;
         padding-top: 1%;
         justify-content: center;
@@ -468,6 +511,7 @@ li.navItem {
 
         .icons {
             height: 1.5em;
+            padding: 4px;
         }
 
         .icons:hover {
@@ -477,7 +521,7 @@ li.navItem {
         }
 
 /* Reduce card image width on small mobile devices */
-@media only screen and (max-height: 5614px) and (min-width: 570px) and (orientation: portrait) {
+@media only screen and (max-height: 568px) and (min-width: 570px) and (orientation: portrait) {
     .cardIcons {
         width: 45%;
     }
@@ -488,7 +532,7 @@ li.navItem {
 
 /* Mobile device media query, set to capture all devices up to the largest mobile phones, 
     with a buffer to the height px to allow for future devices increasing in size */
-@media only screen and (min-height: 360px) and (max-width: 9614px) and (orientation: portrait) {
+    @media only screen and (min-height: 360px) and (max-width: 968px) {
     #navLogo {
         padding: 1.5%;
     }
@@ -500,6 +544,7 @@ li.navItem {
 
     .contentCard {
         width: 40%;
+        min-height: 40%;
         height: 40%;
         flex-direction: row;
         flex-grow: inherit;
@@ -508,14 +553,15 @@ li.navItem {
 
     h2.cardTitle {
         font-size: 1.75em;
-        line-height: 1.675em;
-        margin-bottom: 2.125em;
+        line-height: 1.75em;
+        margin-bottom: 2.5em;
         padding: 0.5em;
     }
 
     p.cardText {
         margin: 1em;
         margin-top: 3em;
+        line-height: 1.5em;
     }
 
     .cards-back {
@@ -528,13 +574,7 @@ li.navItem {
     li a {
         font-size: 0.75em;
         margin: 0 auto;
-
     }
-
-    li.navItem {
-        margin: 0 2%;
-    }
-    
 
     .mapTitle {
         font-size: 1.75em;
@@ -552,11 +592,16 @@ li.navItem {
     table {
         font-size: 12px;
     }
+
     th {
         font-size: 1em;
         letter-spacing: initial;
     }
 
+    .gallery {
+        height: 20vh;
+    }
+    
     .contactInput {
         width: 60%;
     }
@@ -576,7 +621,7 @@ li.navItem {
     }
 
     textarea#message[placeholder] {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
 
     #logoIcon {
@@ -585,8 +630,15 @@ li.navItem {
     }
 }
 
+/* Small phones (ie, iPhone 5) landscape mode */
+@media only screen and (max-height: 330px) and (max-width: 570px) and (orientation: landscape) and (pointer: coarse) {
+    .navItem {
+        font-size: 0.8em;
+    }
+}
+
 /* Landscape mode mobile adjustments  */
-@media only screen and (max-height: 440px) and (min-width: 5614px) and (orientation: landscape) { 
+@media only screen and (max-height: 440px) and (min-width: 566px) and (orientation: landscape) and (pointer: coarse) {
     h2.cardTitle {
         font-size: 1.5em;
         line-height: 1.675em;
@@ -600,7 +652,7 @@ li.navItem {
     }
 
     .mapTitle {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     #resetButton {
@@ -617,6 +669,7 @@ li.navItem {
 
     .contactHeader {
         font-size: 2em;
+        white-space: nowrap;
     }
 
     textarea#subject[placeholder] {
@@ -625,6 +678,18 @@ li.navItem {
 
     textarea#message[placeholder] {
         font-size: 1.5em;
+    }
+
+    li a {
+        font-size: 1.25em;
+    }
+    
+    .navitem {
+        font-size: 1.25em;
+    }
+    
+    .paws {
+        width: 9em;
     }
 }
 
@@ -635,40 +700,3 @@ li.navItem {
     height: 0;
 }
 */
-
-.carousel {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-}
-    .gallery {
-        padding: 1rem;
-        display: grid;
-        grid-template-columns: repeat(6, 30vw);
-        grid-template-rows: 1fr;
-        grid-column-gap: 5rem;
-        grid-row-gap: 1rem;
-        overflow: scroll;
-        height: 40vh;
-        width: 100%;
-        scroll-snap-type: both mandatory;
-        scroll-padding: 1rem;
-        background: #f5f5f5;
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-
-        .gallery::-webkit-scrollbar {
-            display: none;
-        }
-
-        .activeCarousel {
-            scroll-snap-type: unset;
-        }
-
-        li.carousel {
-            scroll-snap-align: center;
-            display: inline-block;
-            border-radius: 3px;
-            font-size: 0;
-        }
