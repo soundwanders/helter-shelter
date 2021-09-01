@@ -362,22 +362,26 @@ li.footerLink {
             }
                 .gallery {
                     display: grid;
-                    grid-template-columns: repeat(6, 30vw);
+                    grid-template-columns: repeat(8, 25vw);
                     grid-template-rows: 1fr;
-                    grid-column-gap: 4rem;
+                    grid-column-gap: 0;
                     grid-row-gap: 1rem;
                     width: 100%;
-                    height: 40vh;
-                    padding: 1rem;
+                    padding: 0.5rem 0;
                     background: #f5f5f5;
                     overflow: scroll;
                     scroll-snap-type: both mandatory;
-                    scroll-padding: 1rem;
+                    scroll-padding: 0;
                     scrollbar-width: none;
                 }
             
                     .gallery::-webkit-scrollbar {
                         display: none;
+                    }
+                    
+                    .carouselImage {
+                        width: 100%;
+                        height: auto;
                     }
             
                     .activeCarousel {
@@ -599,7 +603,8 @@ li.footerLink {
     }
 
     .gallery {
-        height: 20vh;
+        display: grid;
+        grid-template-columns: repeat(8, 40%);
     }
 
     .contactInput {
@@ -630,7 +635,7 @@ li.footerLink {
     }
 }
 
-/* Small phones (ie, iPhone 5) landscape mode */
+/* Small phone Landscape mode */
 @media only screen and (max-height: 330px) and (max-width: 570px) and (orientation: landscape) and (pointer: coarse) {
     .navItem {
         font-size: 0.8em;

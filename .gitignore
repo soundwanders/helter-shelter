@@ -71,6 +71,9 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# production branch dist output
+/dist
+
 # dotenv environment variables file
 .env
 .env.test
