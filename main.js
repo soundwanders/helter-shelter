@@ -77,7 +77,7 @@ const data = Object.keys(mapData[0]);
 generateTable(table, mapData);
 generateTableHead(table, data);
 
-// Collapsible Data Table Functionality
+// Collapsible Data Table
 // calculates screen size to create a slide down effect on table expansion
 const collapse = document.getElementsByClassName('collapseTableButton');
 let i;
@@ -101,7 +101,8 @@ for (i = 0; i < collapse.length; i++) {
 }
 
 // Carousel Slider
-const slider = document.querySelector('.carouselContainer');
+// navigate gallery using a scrollbar that is hidden on mobile devices so you can swipe to move images on x-axis
+const slider = document.querySelector('.gallery');
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -131,4 +132,8 @@ slider.addEventListener('mousemove', e => {
   const scrollSpeed = 3;
   const walk = (x - startX) * scrollSpeed;
   slider.scrollLeft = scrollLeft - walk;
+
+  if (x == 0) {
+    slider.scrollLeft = scrollLeft - walk;
+  }
 });

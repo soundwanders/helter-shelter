@@ -353,35 +353,34 @@ li.footerLink {
                 background-color: #d2d2ff;
             }
 
-
             .carouselContainer {
                 display: flex;
                 width: 100%;
                 margin: 0;
-                background: #f5f5f5;
+                padding: 2% 0 0 0;
+                background: #d2d2ff;
+                user-select: none;
             }
                 .gallery {
                     display: grid;
                     grid-template-columns: repeat(8, 25vw);
                     grid-template-rows: 1fr;
                     grid-column-gap: 0;
-                    grid-row-gap: 1rem;
+                    grid-row-gap: 0;
                     width: 100%;
-                    padding: 0.5rem 0;
-                    background: #f5f5f5;
-                    overflow: scroll;
-                    scroll-snap-type: both mandatory;
-                    scroll-padding: 0;
+                    padding: 0;
+                    margin: 0;
+                    background: #d2d2ff;
+                    overflow: hidden;
                     scrollbar-width: none;
+                    -webkit-user-drag: none;
+                    -webkit-user-select: none;
+                    user-select: none;
                 }
-            
-                    .gallery::-webkit-scrollbar {
-                        display: none;
-                    }
                     
                     .carouselImage {
                         width: 100%;
-                        height: auto;
+                        opacity: 0.9;
                     }
             
                     .activeCarousel {
@@ -508,7 +507,7 @@ li.footerLink {
     .footerLogos {
         display: flex;
         width: 100%;
-        padding-top: 1%;
+        padding: 2%;
         justify-content: center;
         background: #493979;
     }
@@ -531,6 +530,10 @@ li.footerLink {
     }
     h2.cardTitle {
         font-size: 1.5em;
+    }
+    li a {
+        font-size: 0.675em;
+        margin: 0 auto;
     }
 }
 
@@ -605,6 +608,14 @@ li.footerLink {
     .gallery {
         display: grid;
         grid-template-columns: repeat(8, 40%);
+        overflow: scroll;
+        scroll-snap-type: both mandatory;
+        scroll-padding: 1rem;
+        scrollbar-width: none;
+    }
+
+    .gallery::-webkit-scrollbar {
+        display: none;
     }
 
     .contactInput {
