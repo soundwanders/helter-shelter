@@ -12,14 +12,14 @@ module.exports = {
     './src/index.js',
   ],
   output: {
-    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
     publicPath: '/dist',
     clean: true,
   },
   resolve: {
     extensions: [ 
-      '.js', '.jsx' 
+      '.js', '.jsx', 
     ]
   },
   devServer: {
@@ -47,7 +47,10 @@ module.exports = {
           }
         },
       },
-
+      {
+        test: /\.html$/i,
+        type: 'asset/resource',
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -57,6 +60,10 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.txt$/,
+        type: 'asset/source',
       },
     ],
   },

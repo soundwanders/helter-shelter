@@ -1,4 +1,4 @@
-require(["validate.js"], function(validate) {
+export default function validate() {
 
     const constraints = {
         name: {
@@ -48,4 +48,4 @@ require(["validate.js"], function(validate) {
         alert('Message sent. We will respond shortly, thank you!');
         }
     }, false);
-});
+};

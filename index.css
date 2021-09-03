@@ -1,0 +1,728 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.33%;
+    overflow: hidden;
+    word-wrap: none;
+    background: #493979;
+}
+
+li {
+    display: flex;
+    float: right;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 2.5em;
+}
+
+    li a:hover {
+        color: #fff06d;
+        cursor: pointer;
+    }
+
+li.navItem {
+    margin: 0 4%;
+}
+
+li.footerLink {
+    margin: 0 2%;
+}
+
+#navLogo {
+    float: left;
+    padding: 0.33%;
+    margin: 0;
+}
+
+#logoIcon {
+    height: 2.5em;
+    border-radius: 2em;
+    line-height: 2.5em;
+}
+
+.bannerContainer {
+    display: flex;
+    flex-basis: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bannerImage {
+    width: 100%;
+}
+
+/* card content wrapper, flex container section below banner */
+.cardWrapper {
+    display: flex;
+    width: 100%;
+    height: 55%;
+    background-color: #f5f5f5;
+}
+
+.cardContainer {
+    display: inherit;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    vertical-align: middle;
+    padding: 3% 0;
+    overflow: hidden;
+    background: transparent;
+    perspective: 1000px;
+}
+
+    .contentCard {
+        display: flex;
+        width: 20%;
+        min-height: 40vh;
+        height: 40vh;
+        -webkit-box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
+        box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
+        -webkit-transition-duration: 0.9s;
+        -webkit-transition-timing-function: ease-in-out;
+        -webkit-transform-style: preserve-3d;
+        transition-duration: 0.9s;
+        transition-timing-function: ease-in-out;
+        transform-style: preserve-3d;
+    }
+
+    /* Rotate card on hover */
+    .contentCard:hover , .cards-front {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+        .cards-front {   
+            background-color: #493979;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cards-front, .cards-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            justify-content: center;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+
+        /* Front of card svg icons */
+        .cardIcons {
+            display: flex;
+            width: 60%;
+            margin: auto;
+            margin-top: 12%;
+        }
+
+        .cards-back {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+            font-size: 1em;
+            line-height: 1.5em;
+            text-align: center;
+            background-color: #fff;
+            color: #493979;
+            overflow-x: hidden;
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        h2.cardTitle {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            margin-bottom: 2.5em;
+            padding: 0.5em;
+            font-size: 3.75em;
+            line-height: 2em;
+            text-align: center;
+        }
+/*       
+            h2#furballs {
+                margin: 0.5em 1em;
+                margin-bottom: 3.25em;
+            }
+
+            h2#happy {
+                margin: 0.675em 1em 2em 1em;
+            }
+
+            h2#leftBehind {
+                margin: 0.5em 1em;
+                margin-bottom: 1.75em;
+            }
+                
+            h2#helterCard {
+                margin: 1em 0.5em;
+                margin-bottom: 3em;
+            } */
+
+        p.cardText {
+            margin: 3em;
+        }
+
+.mapTitleContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1% 0 2% 0;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+    .mapTitle {
+        display: inherit;
+        margin: 0 auto;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 5em;
+        font-weight: 600;
+        color: #000;
+        padding: 2%;
+    }
+
+        /* map-display's parent div, flex container for leaflet map */
+        .mapContainer {
+            display: flex;
+            flex-basis: 100%;
+            width: 100%;
+            height: 90%;
+            justify-content: center;
+            white-space: no-wrap;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            padding-bottom: 1em;
+        }
+
+        /* leaflet.js map display */
+        #map-display {
+            display: inherit;
+            justify-content: center;
+            width: 70%;
+            height: auto;
+            z-index: 2;
+            margin: 2em;
+            margin-bottom: 1em;
+            border: 2px solid black;
+            border-radius: 0.5em;
+        }
+
+        .resetView {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            padding-bottom: 2em;
+        }
+
+            #resetButton {
+                display: flex;
+                justify-content: center;
+                width: 70%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                font-size: 1.75em;
+                font-weight: 600;
+                padding: 1em 0;
+                border: none;
+                border-radius: 0.25em;
+                outline: none;
+                color: white;
+                background-color: #493979;
+                text-align: center;
+                overflow: hidden;
+                margin: 0 auto;
+                cursor: pointer;
+                -webkit-box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2);
+                box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2);
+            }
+
+            #resetButton:hover {
+                opacity: 0.98;
+            }
+
+            #resetButton:active {
+                -webkit-transform: scale(.998);
+                transform: scale(.998);
+            }
+
+.collapseTableButton {
+    display: inherit;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #493979;
+    color: white;
+    font-size: 5em;
+    line-height: 1em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.collapseTableButton:hover {
+    opacity: 0.98;
+}
+
+.collapseTableButton:active {
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+.collapseTableButton:after {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    content: '\002B';
+}
+
+    .active:after {
+        content: "\2212";
+    }
+
+    /* adding style to the data table for better presentation */
+    .dataTable {
+        display: none;
+        justify-content: center;
+        background-color: #f5f5f5;
+        max-height: 0;
+        padding: 2em 1em;
+        overflow: hidden;
+        -webkit-transition: max-height 0.3s ease-out;
+        transition: max-height 0.3s ease-out;
+    }
+
+        table {
+            padding: 2em 1em;
+            border-collapse: collapse;
+            -webkit-box-shadow: 2px 6px 14px 6px rgba(0,0,0,0.075);
+            box-shadow: 2px 6px 14px 6px rgba(0,0,0,0.075);
+        }
+            
+            th {
+                padding: 1em;
+                border: 2px solid #d2d2ff;
+                background-color: #d2d2ff;
+                color: #000;
+                font-family: 'Montserrat', 'Lucida Sans', sans-serif;
+                font-size: 1.75em;
+                letter-spacing: 2px;
+            }
+
+            td {
+                padding: 1em;
+                border: none;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                font-weight: 600;
+            }
+
+            tr:nth-child(odd) {
+                padding: 1em;
+                background-color: #f5f5f5;
+            }
+
+            tr:nth-child(even) {
+                background-color: #d2d2ff;
+            }
+
+            .carouselContainer {
+                display: flex;
+                width: 100%;
+                margin: 0;
+                padding: 2% 0 0 0;
+                background: #d2d2ff;
+                user-select: none;
+            }
+                .gallery {
+                    display: grid;
+                    grid-template-columns: repeat(8, 25vw);
+                    grid-template-rows: 1fr;
+                    grid-column-gap: 0;
+                    grid-row-gap: 0;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    background: #d2d2ff;
+                    overflow: hidden;
+                    scrollbar-width: none;
+                    -webkit-user-drag: none;
+                    -webkit-user-select: none;
+                    user-select: none;
+                }
+                    
+                    .carouselImage {
+                        width: 100%;
+                        opacity: 0.95;
+                    }
+            
+                    .activeCarousel {
+                        scroll-snap-type: unset;
+                    }
+            
+                    .carouselContainer {
+                        scroll-snap-align: center;
+                        display: inline-block;
+                        border-radius: 3px;
+                        font-size: 0;
+                    }
+
+.contactContainer {
+    display: inherit;
+    width: 100%;
+    justify-content: center;
+    padding: 2% 0;
+    overflow: hidden;
+    background: #d2d2ff;
+}
+
+    .contactHeader {
+        margin: 1em;
+        margin-bottom: 1.75em;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 0.25em;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 3.75em;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .paws {
+        margin: 0;
+        width: 10em;
+        padding-top: 15%;
+    }
+
+    .contactInput {
+        width: 33%;
+    }
+
+    input[type=text], select, textarea {
+        display: flex;
+        flex-basis: 100%;
+        margin: 1em auto;
+        padding: 1.25em;
+        font-family: 'Courier New', Courier, monospace !important;
+        border: 5px solid black;
+        border-radius: 1em;
+        line-height: 1.25em;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    input[type=submit] {
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        color: black;
+        margin: 1em auto;
+        padding: 0.75em 1em;
+        font-family: 'Courier New', Courier, monospace !important;
+        font-size: 1.25em;
+        font-weight: 600;
+        font-family: monospace;
+        letter-spacing: 0.25px;
+        border: 5px solid black;
+        border-radius: 1em;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        opacity: 0.9;
+    }
+
+    input[placeholder] {
+        font-size: 1em;
+    }
+
+        textarea#subject[placeholder] {
+            font-size: 1.75em;
+            line-height: 2em;
+        }
+
+        textarea#message[placeholder] {
+            font-size: 2em;
+        }
+
+            #subject {
+                padding: 0.5em 1em;
+            }
+
+            #message {
+                padding-bottom: 10%;
+            }   
+
+            label {
+                visibility: hidden;
+            }
+
+.helter-footer {
+    display: block;
+    width: 100%;
+    background-color: #493979;
+}
+
+.foot {
+    display: flex;
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: center;
+    padding: 1% 0 0 0;
+}
+
+    .foot a {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-weight: 400;
+    }
+
+    .footerLogos {
+        display: flex;
+        width: 100%;
+        padding: 2%;
+        justify-content: center;
+        background: #493979;
+    }
+
+        .icons {
+            height: 1.5em;
+            padding: 4px;
+        }
+
+        #github {
+            -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+        }
+
+        .icons:hover {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        #github:hover {
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+
+/* Reduce card image width on small mobile devices */
+@media only screen and (max-height: 568px) and (min-width: 570px) and (orientation: portrait) {
+    .cardIcons {
+        width: 45%;
+    }
+    h2.cardTitle {
+        font-size: 1.5em;
+    }
+    li a {
+        font-size: 0.675em;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile device media query, set to capture all devices up to the largest mobile phones, 
+    with a buffer to the height px to allow for future devices increasing in size */
+    @media only screen and (min-height: 360px) and (max-width: 968px) {
+    #navLogo {
+        padding: 1.5%;
+    }
+
+    .cardContainer {
+        padding: 2%;
+        margin-top: 5%;
+    }
+
+    .contentCard {
+        width: 40%;
+        min-height: 40%;
+        height: 40%;
+        flex-direction: row;
+        flex-grow: inherit;
+        flex-wrap: wrap;
+    }
+
+    h2.cardTitle {
+        font-size: 1.75em;
+        line-height: 1.75em;
+        margin-bottom: 2.75em;
+        padding: 0.5em;
+    }
+
+    p.cardText {
+        margin: 1em;
+        margin-top: 3em;
+        line-height: 1.5em;
+    }
+
+    .cards-back {
+        line-height: 1em;
+        font-size: 0.75em;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    li a {
+        font-size: 0.75em;
+        margin: 0 auto;
+    }
+
+    .mapTitle {
+        font-size: 1.75em;
+    }
+
+    #resetButton {
+        font-size: 1em;
+        padding: 0.5em 0;
+    }
+
+    .button-collapsible {
+        font-size: 3em;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 1em;
+        letter-spacing: initial;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(8, 40%);
+        overflow: scroll;
+        scroll-snap-type: both mandatory;
+        scroll-padding: 1rem;
+        scrollbar-width: none;
+    }
+
+    .gallery::-webkit-scrollbar {
+        display: none;
+    }
+
+    .contactInput {
+        width: 60%;
+    }
+
+    .contactHeader {
+        font-size: initial;
+    }
+
+    .paws {
+        padding-top: 66%;
+        max-width: 3em;
+
+    }
+
+    textarea#subject[placeholder] {
+        font-size: initial;
+    }
+
+    textarea#message[placeholder] {
+        font-size: 1.25em;
+    }
+
+    #logoIcon {
+        height: 1em;
+        border-radius: 2em;
+    }
+}
+
+/* Small phone Landscape mode */
+@media only screen and (max-height: 330px) and (max-width: 570px) and (orientation: landscape) and (pointer: coarse) {
+    .navItem {
+        font-size: 0.8em;
+    }
+}
+
+/* Landscape mode mobile adjustments  */
+@media only screen and (max-height: 440px) and (min-width: 566px) and (orientation: landscape) and (pointer: coarse) {
+    h2.cardTitle {
+        font-size: 1.5em;
+        line-height: 1.675em;
+        margin-bottom: 2em;
+        padding: 0.5em;
+    }
+
+    p.cardText {
+        margin: 1rem 0.25rem;
+        margin-top: 3rem;
+    }
+
+    .mapTitle {
+        font-size: 2.5em;
+    }
+
+    #resetButton {
+        font-size: 1em;
+    }
+
+    .button-collapsible {
+        font-size: 3em;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    .contactHeader {
+        font-size: 2em;
+        white-space: nowrap;
+    }
+
+    textarea#subject[placeholder] {
+        font-size: initial;
+    }
+
+    textarea#message[placeholder] {
+        font-size: 1.5em;
+    }
+
+    li a {
+        font-size: 1.25em;
+    }
+    
+    .navitem {
+        font-size: 1.25em;
+    }
+    
+    .paws {
+        width: 9em;
+    }
+}
+
+/* forces a line break in flex layout
+.flexBreak {
+    display: flex;
+    flex-basis: 100%;
+    height: 0;
+}
+*/
