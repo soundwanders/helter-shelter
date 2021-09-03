@@ -227,7 +227,7 @@ li.footerLink {
         #map-display {
             display: inherit;
             justify-content: center;
-            width: 75%;
+            width: 70%;
             height: auto;
             z-index: 2;
             margin: 2em;
@@ -248,7 +248,7 @@ li.footerLink {
             #resetButton {
                 display: flex;
                 justify-content: center;
-                width: 75%;
+                width: 70%;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
                 font-size: 1.75em;
                 font-weight: 600;
@@ -380,7 +380,7 @@ li.footerLink {
                     
                     .carouselImage {
                         width: 100%;
-                        opacity: 0.9;
+                        opacity: 0.95;
                     }
             
                     .activeCarousel {
@@ -517,10 +517,20 @@ li.footerLink {
             padding: 4px;
         }
 
+        #github {
+            -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+        }
+
         .icons:hover {
             -webkit-transform: scale(1.05);
             transform: scale(1.05);
             opacity: 0.9;
+        }
+
+        #github:hover {
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
         }
 
 /* Reduce card image width on small mobile devices */
