@@ -1,7 +1,6 @@
 import 'leaflet/dist/leaflet.js';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import dogIcon from './assets/icons/map-icon.png';
 
 export default function pageMap() {
 
@@ -20,7 +19,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // override Leaflet default icon to pass custom icon parameters
 const iconOptions = {
-  iconUrl: dogIcon ,
+  iconUrl: 'assets/icons/map-icon.png',
   iconSize: [30, 30]
 };
 

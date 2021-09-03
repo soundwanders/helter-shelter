@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/soundwanders/helter-shelter/issues"
   },
-  "homepage": "https://github.com/soundwanders/helter-shelter#readme",
+  "homepage": "./",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",

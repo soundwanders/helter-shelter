@@ -47,10 +47,10 @@ module.exports = {
           }
         },
       },
-      {
-        test: /\.html$/i,
-        type: 'asset/resource',
-      },
+      // {
+      //   test: /\.html/,
+      //   type: 'asset/resource',
+      // },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -72,13 +72,12 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin(
       {
+        title: 'Helter-Shelter',
         template: './index.html',
         minify: !isDev && {
           html5: true,
           collapseWhitespace: true,
-          caseSensitive: true,
           removeComments: true,
-          removeEmptyElements: false
         }
       },
     ),
