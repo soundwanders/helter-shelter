@@ -507,7 +507,7 @@ li.footerLink {
     .footerLogos {
         display: flex;
         width: 100%;
-        padding: 2%;
+        padding: 2% 0 1% 0;
         justify-content: center;
         background: #493979;
     }
@@ -533,17 +533,35 @@ li.footerLink {
             transform: scale(0.9);
         }
 
-/* Reduce card image width on small mobile devices */
-@media only screen and (max-height: 568px) and (min-width: 570px) and (orientation: portrait) {
+        .copyright {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+            font-size: 12px;
+            color: white;
+            justify-content: center;
+            padding-bottom: 1em;
+        }
+
+/* Small mobile devices such as the iPhone 5 */
+@media only screen and (max-height: 568px) and (max-width: 570px) and (orientation: portrait) {
+
     .cardIcons {
         width: 45%;
     }
+
     h2.cardTitle {
         font-size: 1.5em;
     }
+
     li a {
         font-size: 0.675em;
         margin: 0 auto;
+    }
+
+    .copyright {
+        font-size: 10px;
     }
 }
 
@@ -654,6 +672,10 @@ li.footerLink {
         height: 1em;
         border-radius: 2em;
     }
+
+    .copyright {
+        font-size: 10px;
+    }
 }
 
 /* Small phone Landscape mode */
@@ -718,11 +740,3 @@ li.footerLink {
         width: 9em;
     }
 }
-
-/* forces a line break in flex layout
-.flexBreak {
-    display: flex;
-    flex-basis: 100%;
-    height: 0;
-}
-*/
