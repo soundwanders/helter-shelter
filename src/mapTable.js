@@ -78,27 +78,4 @@ export default function mapTable() {
 
     generateTable(table, mapData);
     generateTableHead(table, data);
-
-    // Collapsible Data Table Functionality
-    // calculates screen size to create a slide down effect on table expansion
-    const collapse = document.getElementsByClassName('collapseTableButton');
-    let i;
-
-    for (i = 0; i < collapse.length; i++) {
-      collapse[i].addEventListener('click', function () {
-        this.classList.toggle('active');
-        const content = this.nextElementSibling;
-
-        if (content.style.display === 'flex') {
-          content.style.display = 'none';
-        } else {
-          content.style.display = 'flex';
-        }
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + 'px';
-        }
-      });
-    }
 };

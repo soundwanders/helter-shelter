@@ -2,7 +2,7 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const isDev = process.env.NODE_ENV !== "prod";
+const isDev = process.env.NODE_ENV !== 'prod';
 
 
 module.exports = {
@@ -17,11 +17,6 @@ module.exports = {
     publicPath: '/dist',
     clean: true,
   },
-  resolve: {
-    extensions: [ 
-      '.js', '.jsx', 
-    ]
-  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
@@ -34,6 +29,13 @@ module.exports = {
   module: {
     rules: 
     [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          minimize: true,
+        },
+      },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
@@ -48,15 +50,8 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/i,
-        loader: "html-loader",
-        options: {
-          minimize: true,
-        },
-      },
-      {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
 
         use: [ isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
       },
@@ -69,7 +64,7 @@ module.exports = {
       },
       {
         test: /\.txt$/,
-        type: 'asset/source',
+        type: 'asset',
       },
     ],
   },
@@ -80,6 +75,7 @@ module.exports = {
       {
         title: 'Helter-Shelter',
         template: 'index.html',
+        inject: 'body',
         minify: !isDev && {
           html5: true,
           collapseWhitespace: true,

@@ -19,7 +19,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // override Leaflet default icon to pass custom icon parameters
 const iconOptions = {
-  iconUrl: 'assets/icons/map-icon.png',
+  iconUrl: './assets/icons/map-icon.png',
   iconSize: [30, 30]
 };
 
@@ -134,17 +134,4 @@ const pins =
     43.11613860902086, -71.86004564719458
   ]
 ];
-
-for (let i = 0; i < pins.length; i++) {
-  marker = new L.marker([pins[i][1], pins[i][2]], markerOptions)
-    .bindPopup(pins[i][0])
-    .addTo(shelterMap);
-}
-
-  // Reset the map to the initial view/zoom level
-  const resetBtn = document.getElementById('resetButton');
-
-  resetBtn.addEventListener('click', function () {
-    shelterMap.flyTo([43.441086332706374, -71.82000972872403], 8);
-  })
 };

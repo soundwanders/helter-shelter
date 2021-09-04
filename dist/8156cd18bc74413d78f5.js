@@ -1,1 +1,0 @@
-__webpack_nonce__="c29tZSBjb29sIHN0cmluZyB3aWxsIHBvcCB1cCAxMjM=";import"../index.css";import pageMap from"./map.js";import mapTable from"./mapTable.js";import validate from"./dataValidation.js";pageMap(),mapTable(),validate();
