@@ -47,10 +47,13 @@ module.exports = {
           }
         },
       },
-      // {
-      //   test: /\.html/,
-      //   type: 'asset/resource',
-      // },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+        options: {
+          minimize: true,
+        },
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -58,8 +61,11 @@ module.exports = {
         use: [ isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(ico|png|svg|jpg|jpeg)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]'
+        },
       },
       {
         test: /\.txt$/,
@@ -73,7 +79,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       {
         title: 'Helter-Shelter',
-        template: './index.html',
+        template: 'index.html',
         minify: !isDev && {
           html5: true,
           collapseWhitespace: true,

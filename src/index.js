@@ -5,10 +5,11 @@ __webpack_nonce__ = 'c29tZSBjb29sIHN0cmluZyB3aWxsIHBvcCB1cCAxMjM=';
 // const mapTable = require('./mapTable.js');
 // const validate = require('./dataValidation.js');
 
-import './index.css';
-import pageMap from './map';
-import mapTable from './mapTable';
-import validate from './dataValidation';
+// import "../index.html";
+import '../index.css';
+import pageMap from './map.js';
+import mapTable from './mapTable.js';
+import validate from './dataValidation.js';
 
 pageMap();
 mapTable();

@@ -419,6 +419,8 @@ li.footerLink {
         margin: 0;
         width: 10em;
         padding-top: 15%;
+        user-select: none;
+        -webkit-user-drag: none;
     }
 
     .contactInput {
@@ -651,7 +653,7 @@ li.footerLink {
     }
 
     .contactHeader {
-        font-size: initial;
+        font-size: 1.75em;
     }
 
     .paws {
