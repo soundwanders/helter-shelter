@@ -20,8 +20,6 @@
     <link rel="icon" type="image/ico" href="./src/assets/icons/apple-touch-icon.png"/>
     <link rel="icon" type="image/ico" href="./src/assets/icons/favicon.ico"/>
 
-    <link rel="stylesheet" href="index.css"/>
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -30,6 +28,753 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin="">
     </script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* navbar */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0.33%;
+            overflow: hidden;
+            word-wrap: none;
+            background: #493979;
+        }
+
+        li {
+            display: flex;
+            float: right;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.5em;
+            font-weight: 600;
+            line-height: 2.5em;
+        }
+
+            li a:hover {
+                color: #fff06d;
+                cursor: pointer;
+            }
+
+        li.navItem {
+            margin: 0 4%;
+        }
+
+        li.footerLink {
+            margin: 0 2%;
+        }
+
+        #navLogo {
+            float: left;
+            padding: 0.33%;
+            margin: 0;
+        }
+
+        #logoIcon {
+            height: 2.5em;
+            border-radius: 2em;
+            line-height: 2.5em;
+        }
+
+        .bannerContainer {
+            display: flex;
+            flex-basis: 100%;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .bannerImage {
+            width: 100%;
+        }
+
+        /* card content wrapper, flex container section below banner */
+        .cardWrapper {
+            display: flex;
+            width: 100%;
+            height: 55%;
+            background-color: #f5f5f5;
+        }
+
+        .cardContainer {
+            display: inherit;
+            flex-wrap: wrap;
+            flex-direction: row;
+            flex-basis: 100%;
+            width: 100%;
+            justify-content: space-evenly;
+            vertical-align: middle;
+            padding: 3% 0;
+            overflow: hidden;
+            background: transparent;
+            perspective: 1000px;
+        }
+
+            .contentCard {
+                display: flex;
+                width: 20%;
+                min-height: 40vh;
+                height: 40vh;
+                -webkit-box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
+                box-shadow: 5px 6px 26px 3px rgba(0,0,0,0.25);
+                -webkit-transition-duration: 0.9s;
+                -webkit-transition-timing-function: ease-in-out;
+                -webkit-transform-style: preserve-3d;
+                transition-duration: 0.9s;
+                transition-timing-function: ease-in-out;
+                transform-style: preserve-3d;
+            }
+
+            /* Rotate card on hover */
+            .contentCard:hover , .cards-front {
+                -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+
+                .cards-front {   
+                    background-color: #493979;
+                    overflow: hidden;
+                    z-index: 2;
+                }
+
+                .cards-front, .cards-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    justify-content: center;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    -webkit-transform: rotateX(0deg);
+                    transform: rotateX(0deg);
+                }
+
+                /* Front of card svg icons */
+                .cardIcons {
+                    display: flex;
+                    width: 60%;
+                    margin: auto;
+                    margin-top: 12%;
+                }
+
+                .cards-back {
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                    font-size: 1em;
+                    line-height: 1.5em;
+                    text-align: center;
+                    background-color: #fff;
+                    color: #493979;
+                    overflow-x: hidden;
+                    -webkit-transform: rotateY(180deg);
+                    transform: rotateY(180deg);
+                }
+
+                h2.cardTitle {
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    margin: 0 auto;
+                    margin-bottom: 2.5em;
+                    padding: 0.5em;
+                    font-size: 3.75em;
+                    line-height: 1.75em;
+                    text-align: center;
+                }
+        /*       
+                    h2#furballs {
+                        margin: 0.5em 1em;
+                        margin-bottom: 3.25em;
+                    }
+
+                    h2#happy {
+                        margin: 0.675em 1em 2em 1em;
+                    }
+
+                    h2#leftBehind {
+                        margin: 0.5em 1em;
+                        margin-bottom: 1.75em;
+                    }
+                        
+                    h2#helterCard {
+                        margin: 1em 0.5em;
+                        margin-bottom: 3em;
+                    } */
+
+                p.cardText {
+                    margin: 3em;
+                }
+
+        .mapTitleContainer {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 1% 0 2% 0;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+            .mapTitle {
+                display: inherit;
+                margin: 0 auto;
+                text-align: center;
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                font-size: 5em;
+                font-weight: 600;
+                color: #000;
+                padding: 2%;
+            }
+
+                /* map-display's parent div, flex container for leaflet map */
+                .mapContainer {
+                    display: flex;
+                    flex-basis: 100%;
+                    width: 100%;
+                    height: 90%;
+                    justify-content: center;
+                    white-space: no-wrap;
+                    overflow: hidden;
+                    background-color: #f5f5f5;
+                    padding-bottom: 1em;
+                }
+
+                /* leaflet.js map display */
+                #map-display {
+                    display: inherit;
+                    justify-content: center;
+                    width: 70%;
+                    height: auto;
+                    z-index: 2;
+                    margin: 2em;
+                    margin-bottom: 1em;
+                    border: 2px solid black;
+                    border-radius: 0.5em;
+                }
+
+                .resetView {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    overflow: hidden;
+                    background-color: #f5f5f5;
+                    padding-bottom: 2em;
+                }
+
+                    #resetButton {
+                        display: flex;
+                        justify-content: center;
+                        width: 70%;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                        font-size: 1.75em;
+                        font-weight: 600;
+                        padding: 1em 0;
+                        border: none;
+                        border-radius: 0.25em;
+                        outline: none;
+                        color: white;
+                        background-color: #493979;
+                        text-align: center;
+                        overflow: hidden;
+                        margin: 0 auto;
+                        cursor: pointer;
+                        -webkit-box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2);
+                        box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2);
+                    }
+
+                    #resetButton:hover {
+                        opacity: 0.98;
+                    }
+
+                    #resetButton:active {
+                        -webkit-transform: scale(.998);
+                        transform: scale(.998);
+                    }
+
+        .collapseTableButton {
+            display: inherit;
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: #493979;
+            color: white;
+            font-size: 5em;
+            line-height: 1em;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .collapseTableButton:hover {
+            opacity: 0.98;
+        }
+
+        .collapseTableButton:active {
+            -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+        }
+
+        .collapseTableButton:after {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            content: '\002B';
+        }
+
+            .active:after {
+                content: "\2212";
+            }
+
+            /* adding style to the data table for better presentation */
+            .dataTable {
+                display: none;
+                justify-content: center;
+                background-color: #f5f5f5;
+                max-height: 0;
+                padding: 2em 1em;
+                overflow: hidden;
+                -webkit-transition: max-height 0.3s ease-out;
+                transition: max-height 0.3s ease-out;
+            }
+
+                table {
+                    padding: 2em 1em;
+                    border-collapse: collapse;
+                    -webkit-box-shadow: 2px 6px 14px 6px rgba(0,0,0,0.075);
+                    box-shadow: 2px 6px 14px 6px rgba(0,0,0,0.075);
+                }
+                    
+                    th {
+                        padding: 1em;
+                        border: 2px solid #d2d2ff;
+                        background-color: #d2d2ff;
+                        color: #000;
+                        font-family: 'Montserrat', 'Lucida Sans', sans-serif;
+                        font-size: 1.75em;
+                        letter-spacing: 2px;
+                    }
+
+                    td {
+                        padding: 1em;
+                        border: none;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                        font-weight: 600;
+                    }
+
+                    tr:nth-child(odd) {
+                        padding: 1em;
+                        background-color: #f5f5f5;
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: #d2d2ff;
+                    }
+
+                    .carouselContainer {
+                        display: flex;
+                        width: 100%;
+                        margin: 0;
+                        padding: 2% 0 0 0;
+                        background: #d2d2ff;
+                        user-select: none;
+                    }
+                        .gallery {
+                            display: grid;
+                            grid-template-columns: repeat(8, 25vw);
+                            grid-template-rows: 1fr;
+                            grid-column-gap: 0;
+                            grid-row-gap: 0;
+                            width: 100%;
+                            padding: 0;
+                            margin: 0;
+                            background: #d2d2ff;
+                            overflow: hidden;
+                            scrollbar-width: none;
+                            -webkit-user-drag: none;
+                            -webkit-user-select: none;
+                            user-select: none;
+                        }
+                            
+                            .carouselImage {
+                                width: 100%;
+                                opacity: 0.95;
+                            }
+                    
+                            .activeCarousel {
+                                scroll-snap-type: unset;
+                            }
+                    
+                            .carouselContainer {
+                                scroll-snap-align: center;
+                                display: inline-block;
+                                border-radius: 3px;
+                                font-size: 0;
+                            }
+
+        .contactContainer {
+            display: inherit;
+            width: 100%;
+            justify-content: center;
+            padding: 2% 0;
+            overflow: hidden;
+            background: #d2d2ff;
+        }
+
+            .contactHeader {
+                margin: 1em;
+                margin-bottom: 1.75em;
+                text-align: center;
+                text-decoration: underline;
+                text-underline-offset: 0.25em;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                font-size: 3.75em;
+                font-weight: 600;
+                color: #000;
+            }
+
+            .paws {
+                margin: 0;
+                width: 10em;
+                padding-top: 15%;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            .contactInput {
+                width: 33%;
+            }
+
+            input[type=text], select, textarea {
+                display: flex;
+                flex-basis: 100%;
+                margin: 1em auto;
+                padding: 1.25em;
+                font-family: 'Courier New', Courier, monospace !important;
+                border: 5px solid black;
+                border-radius: 1em;
+                line-height: 1.25em;
+                box-sizing: border-box;
+                resize: vertical;
+            }
+
+            input[type=submit] {
+                display: flex;
+                justify-content: center;
+                background-color: #fff;
+                color: black;
+                margin: 1em auto;
+                padding: 0.75em 1em;
+                font-family: 'Courier New', Courier, monospace !important;
+                font-size: 1.25em;
+                font-weight: 600;
+                font-family: monospace;
+                letter-spacing: 0.25px;
+                border: 5px solid black;
+                border-radius: 1em;
+                user-select: none;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                opacity: 0.9;
+            }
+
+            input[placeholder] {
+                font-size: 1em;
+            }
+
+                textarea#subject[placeholder] {
+                    font-size: 1.75em;
+                    line-height: 2em;
+                }
+
+                textarea#message[placeholder] {
+                    font-size: 2em;
+                }
+
+                    #subject {
+                        padding: 0.5em 1em;
+                    }
+
+                    #message {
+                        padding-bottom: 10%;
+                    }   
+
+                    label {
+                        visibility: hidden;
+                    }
+
+        .helter-footer {
+            display: block;
+            width: 100%;
+            background-color: #493979;
+        }
+
+        .foot {
+            display: flex;
+            flex-basis: 100%;
+            width: 100%;
+            justify-content: center;
+            padding: 1% 0 0 0;
+        }
+
+            .foot a {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                font-weight: 400;
+            }
+
+            .footerLogos {
+                display: flex;
+                width: 100%;
+                padding: 2% 0 1% 0;
+                justify-content: center;
+                background: #493979;
+            }
+
+                .icons {
+                    height: 1.5em;
+                    padding: 4px;
+                }
+
+                #github {
+                    -webkit-transform: scale(0.85);
+                    transform: scale(0.85);
+                }
+
+                .icons:hover {
+                    -webkit-transform: scale(1.05);
+                    transform: scale(1.05);
+                    opacity: 0.9;
+                }
+
+                #github:hover {
+                    -webkit-transform: scale(0.9);
+                    transform: scale(0.9);
+                }
+
+                .copyright {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: nowrap;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+                    font-size: 12px;
+                    color: white;
+                    justify-content: center;
+                    padding-bottom: 1em;
+                }
+
+        /* Small mobile devices such as the iPhone 5 */
+        @media only screen and (max-height: 568px) and (max-width: 570px) and (orientation: portrait) {
+
+            .cardIcons {
+                width: 45%;
+            }
+
+            h2.cardTitle {
+                font-size: 1.5em;
+            }
+
+            li a {
+                font-size: 0.675em;
+                margin: 0 auto;
+            }
+
+            .copyright {
+                font-size: 10px;
+            }
+        }
+
+        /* Mobile device media query, set to capture all devices up to the largest mobile phones, 
+            with a buffer to the height px to allow for future devices increasing in size */
+            @media only screen and (min-height: 360px) and (max-width: 968px) {
+            #navLogo {
+                padding: 1.5%;
+            }
+
+            .cardContainer {
+                padding: 2%;
+                margin-top: 5%;
+            }
+
+            .contentCard {
+                width: 40%;
+                min-height: 40%;
+                height: 40%;
+                flex-direction: row;
+                flex-grow: inherit;
+                flex-wrap: wrap;
+            }
+
+            h2.cardTitle {
+                font-size: 1.75em;
+                line-height: 1.75em;
+                margin-bottom: 2.75em;
+                padding: 0.5em;
+            }
+
+            p.cardText {
+                margin: 1em;
+                margin-top: 3em;
+                line-height: 1.5em;
+            }
+
+            .cards-back {
+                line-height: 1em;
+                font-size: 0.75em;
+                overflow: scroll;
+                overflow-x: hidden;
+            }
+
+            li a {
+                font-size: 0.75em;
+                margin: 0 auto;
+            }
+
+            .mapTitle {
+                font-size: 1.75em;
+            }
+
+            #resetButton {
+                font-size: 1em;
+                padding: 0.5em 0;
+            }
+
+            .button-collapsible {
+                font-size: 3em;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th {
+                font-size: 1em;
+                letter-spacing: initial;
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(8, 40%);
+                overflow: scroll;
+                scroll-snap-type: both mandatory;
+                scroll-padding: 1rem;
+                scrollbar-width: none;
+            }
+
+            .gallery::-webkit-scrollbar {
+                display: none;
+            }
+
+            .contactInput {
+                width: 60%;
+            }
+
+            .contactHeader {
+                font-size: 1.75em;
+            }
+
+            .paws {
+                padding-top: 66%;
+                max-width: 3em;
+
+            }
+
+            textarea#subject[placeholder] {
+                font-size: initial;
+            }
+
+            textarea#message[placeholder] {
+                font-size: 1.25em;
+            }
+
+            #logoIcon {
+                height: 1em;
+                border-radius: 2em;
+            }
+
+            .copyright {
+                font-size: 10px;
+            }
+        }
+
+        /* Small phone Landscape mode */
+        @media only screen and (max-height: 330px) and (max-width: 570px) and (orientation: landscape) and (pointer: coarse) {
+            .navItem {
+                font-size: 0.8em;
+            }
+        }
+
+        /* Landscape mode mobile adjustments  */
+        @media only screen and (max-height: 440px) and (min-width: 566px) and (orientation: landscape) and (pointer: coarse) {
+            h2.cardTitle {
+                font-size: 1.5em;
+                line-height: 1.675em;
+                margin-bottom: 2em;
+                padding: 0.5em;
+            }
+
+            p.cardText {
+                margin: 1rem 0.25rem;
+                margin-top: 3rem;
+            }
+
+            .mapTitle {
+                font-size: 2.5em;
+            }
+
+            #resetButton {
+                font-size: 1em;
+            }
+
+            .button-collapsible {
+                font-size: 3em;
+            }
+
+            td {
+                text-align: center;
+            }
+
+            .contactHeader {
+                font-size: 2em;
+                white-space: nowrap;
+            }
+
+            textarea#subject[placeholder] {
+                font-size: initial;
+            }
+
+            textarea#message[placeholder] {
+                font-size: 1.5em;
+            }
+
+            li a {
+                font-size: 1.25em;
+            }
+            
+            .navitem {
+                font-size: 1.25em;
+            }
+            
+            .paws {
+                width: 9em;
+            }
+        }
+    </style>
 
 </head>
 
@@ -180,15 +925,299 @@
     </ul>
 </div>
 
-    <!-- Client side data validation for contact form -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    <!--
-        <script src="dataValidation.js"></script>
-        <script src="./mapTable.js"></script>
-        <script src="./map.js"></script>
-        <script src="./index.js"></script>
-    -->
-    <script src="./src/index.js"></script>
+
+    <script>
+        const shelterMap = L.map('map-display').setView([43.441086332706374, -71.82000972872403], 8);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        minZoom: 7,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        iconSize: (30, 30),
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1Ijoic291bmR3YW5kZXJzIiwiYSI6ImNrcmpsZmFkaTcwcWEzMW10MXBpbXdrdTMifQ.BCHaQ4HmyW_TKhwQsxRbAQ'
+        }).addTo(shelterMap);
+
+        const iconOptions = {
+        iconUrl: 'mapIcon.png',
+        iconSize: [30, 30]
+        };
+
+        const smallIcon = L.icon(iconOptions);
+
+        const markerOptions = {
+        title: this.value,
+        clickable: true,
+        draggable: false,
+        icon: smallIcon,
+        };
+
+        const pins =
+        [
+            [
+                'Bedford <br/> Animal Rescue League of New Hampshire <br/> 545 NH-101, Bedford, NH 03110',
+                42.90899271926205, -71.5670055232745
+            ],
+            [
+                'Charlestown <br/> River Valley Animal Protection <br/> 60 Cummings Ave, Charlestown, NH 03603',
+                43.237437440869456, -72.42256720798986
+            ],
+            [
+                'Chichester <br/> Live & Let Farm <br/> 20 Paradice Ln, Chichester, NH 03258',
+                43.21022313179583, -71.41382396891218
+            ],
+            [
+                'Concord <br/> Pope Memorial SPCA of Concord <br/> 94 Silk Farm Rd, Concord, NH 03301',
+                43.17797488092451, -71.57122347422742
+            ],
+            [
+                'Conway <br/> Conway Area Humane Society <br/> 223 E Main St, Conway, NH 03818',
+                43.97781369967596, -71.1100240508895
+            ],
+            [
+                'Derry <br/> The Greater Derry Humane Society <br/> 11 Beaver Lake Rd, Derry, NH 03038',
+                42.90696976682642, -71.28462149754908
+            ],
+            [
+                'Dover <br/> Pope Memorial Humane Society - Cocheco Valley <br/> 221 County Farm Rd, Dover, NH 03820',
+                43.218264375114536, -70.9307315619577
+            ],
+            [
+                'Enfield <br/> Upper Valley Humane Society <br/> 300 Old Rte 10, Enfield, NH 03748',
+                43.58179476977152, -72.16305625023782
+            ],
+            [
+                'Franklin <br/> Franklin Animal Shelter <br/> 19 Rescue Road, Franklin, NH 03235',
+                43.41516604997343, -71.6645171969221
+            ],
+            [
+                'Hudson <br/> Happy Tails Pet Rescue <br/> 14 Pine Rd, Hudson, NH 03051',
+                42.7074140097934, -71.40750910763715
+            ],
+            [
+                'Laconia <br/> New Hampshire Humane Society <br/> 1305 Meredith Center Rd, Laconia, NH 03246',
+                43.63099127848263, -71.36545040256439
+            ],
+            [
+                'Littleton <br/> Second Chance Animal Rescue <br/> 1517 Meadow St, Littleton, NH 03561',
+                44.311944563627286, -72.02325679904196
+            ],
+            [
+                'Manchester <br/> Manchester Animal Shelter <br/> 490 Dunbarton Rd, Manchester, NH 03102',
+                43.597342526041565, -71.51698816320429
+            ],
+            [
+                'Nashua <br/> Humane Society for Greater Nashua <br/> 24 Ferry Rd, Nashua, NH 03064',
+                42.78133633006082, -71.48803780246365
+            ],
+            [
+                'New Boston <br/> Canine Commitment <br/> 733 Bedford Rd, New Boston, NH 03070',
+                42.963817700786706, -71.61916037301043
+            ],
+            [
+                "Northwood <br/> Mary's Dogs Rescue & Adoption <br/> 984 1st New Hampshire Turnpike, Northwood, NH 03261",
+                43.2307150104135, -71.1631204070168
+            ],
+            [
+                'Ossipee <br/> Lakes Region Humane Society <br/> 11 Old Rte 28, Ossipee, NH 03864',
+                43.701499940709354, -71.07464196054205
+            ],
+            [
+                'Salem <br/> Salem Animal Rescue League <br/> 4 SARL Dr, Salem, NH 03079',
+                42.774256733036836, -71.14367773124076
+            ],
+            [
+                'Seabrook <br/> Cat Tales Rescue <br/> 920 Lafayette Rd #201, Seabrook, NH 03874',
+                42.90254490291506, -70.86815684539962
+            ],
+            [
+                'Stratham <br/> New Hampshire SPCA <br/> 104 Portsmouth Ave, Stratham, NH 03885',
+                43.01669380802378, -70.91480667280028
+            ],
+            [
+                'Sugar Hill <br/> Above the Notch Humane Society <br/> 298 NH-18, Sugar Hill, NH 03586',
+                44.241921626015284, -71.76077076744905
+            ],
+            [
+                'Swanzey <br/> Monadnock Humane Society <br/> 101 W Swanzey Rd, Swanzey, NH 03446',
+                42.93483097189659, -72.14343359063717
+            ],
+            [
+                'Weare <br/> Hearts And Tails Animal Alliance <br/> 35 Daniels Rd, Weare, NH 03281',
+                43.07542973659716, -71.5501718718713
+            ],
+            [
+                'Weare <br/> We Are Animal Guardians <br/> 15 Flanders Memorial Rd, Weare, NH 03281',
+                43.11613860902086, -71.86004564719458
+            ]
+        ];
+
+        for (let i = 0; i < pins.length; i++) {
+                marker = new L.marker([pins[i][1], pins[i][2]], markerOptions)
+                .bindPopup(pins[i][0])
+                .addTo(shelterMap);
+            };
+
+            // Reset the map to the initial view/zoom level
+            const resetBtn = document.getElementById('resetButton');
+
+            resetBtn.addEventListener('click', function () {
+                shelterMap.flyTo([43.441086332706374, -71.82000972872403], 8);
+            });
+
+
+        const mapData =
+        [
+            { LOCATION: 'Bedford', NAME: 'Animal Rescue League of New Hampshire', ADDRESS: '545 NH-101, Bedford, NH 03110' },
+
+            { LOCATION: 'Charlestown', NAME: ' River Valley Animal Protection', ADDRESS: '60 Cummings Ave, Charlestown, NH 03603' },
+
+            { LOCATION: 'Chichester', NAME: 'Live & Let Farm', ADDRESS: '20 Paradice Ln, Chichester, NH 03258' },
+
+            { LOCATION: 'Concord', NAME: 'Pope Memorial SPCA of Concord', ADDRESS: '94 Silk Farm Rd, Concord, NH 03301' },
+
+            { LOCATION: 'Conway', NAME: 'Conway Area Humane Society', ADDRESS: '223 E Main St, Conway, NH 03818' },
+
+            { LOCATION: 'Derry', NAME: 'The Greater Derry Humane Society', ADDRESS: '11 Beaver Lake Rd, Derry, NH 03038' },
+
+            { LOCATION: 'Dover', NAME: 'Pope Memorial Humane Society - Cocheco Valley', ADDRESS: '221 County Farm Rd, Dover, NH 03820' },
+
+            { LOCATION: 'Enfield', NAME: 'Upper Valley Humane Society', ADDRESS: '300 Old Rte 10, Enfield, NH 03748' },
+
+            { LOCATION: 'Franklin', NAME: 'Franklin Animal Shelter', ADDRESS: '19 Rescue Road, Franklin, NH 03235' },
+
+            { LOCATION: 'Hudson', NAME: 'Happy Tails Pet Rescue', ADDRESS: '14 Pine Rd, Hudson, NH 03051' },
+
+            { LOCATION: 'Laconia', NAME: 'New Hampshire Humane Society', ADDRESS: '1305 Meredith Center Rd, Laconia, NH 03246' },
+
+            { LOCATION: 'Littleton', NAME: 'Second Chance Animal Rescue', ADDRESS: '1517 Meadow St, Littleton, NH 03561' },
+
+            { LOCATION: 'Manchester', NAME: 'Manchester Animal Shelter', ADDRESS: '490 Dunbarton Rd, Manchester, NH 03102' },
+
+            { LOCATION: 'Nashua', NAME: 'Humane Society for Greater Nashua', ADDRESS: '24 Ferry Rd, Nashua, NH 03064' },
+
+            { LOCATION: 'New Boston', NAME: 'Canine Commitment', ADDRESS: '733 Bedford Rd, New Boston, NH 03070' },
+
+            { LOCATION: 'Northwood', NAME: "Mary's Dogs Rescue & Adoption", ADDRESS: '984 1st New Hampshire Turnpike, Northwood, NH 03261' },
+
+            { LOCATION: 'Ossipee', NAME: 'Lakes Region Humane Society', ADDRESS: '11 Old Rte 28, Ossipee, NH 03864' },
+
+            { LOCATION: 'Salem', NAME: 'Salem Animal Rescue League', ADDRESS: '4 SARL Dr, Salem, NH 03079' },
+
+            { LOCATION: 'Seabrook', NAME: 'Cat Tales Rescue', ADDRESS: '920 Lafayette Rd #201, Seabrook, NH 03874' },
+
+            { LOCATION: 'Stratham', NAME: 'New Hampshire SPCA', ADDRESS: '104 Portsmouth Ave, Stratham, NH 03885' },
+
+            { LOCATION: 'Sugar Hill', NAME: 'Above the Notch Humane Society', ADDRESS: '298 NH-18, Sugar Hill, NH 03586' },
+
+            { LOCATION: 'Swanzey', NAME: 'Monadnock Humane Society', ADDRESS: '101 W Swanzey Rd, Swanzey, NH 03446' },
+
+            { LOCATION: 'Weare', NAME: 'Hearts And Tails Animal Alliance', ADDRESS: '35 Daniels Rd, Weare, NH 03281' },
+
+            { LOCATION: 'Weare', NAME: 'We Are Animal Guardians', ADDRESS: '15 Flanders Memorial Rd, Weare, NH 03281' }
+        ];
+
+        const generateTableHead = (table, data) => {
+            const tableHeader = table.createTHead();
+            const row = tableHeader.insertRow();
+            for (const key of data) {
+            const th = document.createElement('th');
+            const text = document.createTextNode(key);
+            th.appendChild(text);
+            row.appendChild(th);
+            }
+        };
+
+        const generateTable = (table, data) => {
+            for (const element of data) {
+            const row = table.insertRow();
+            for (key in element) {
+                const cell = row.insertCell();
+                const tableText = document.createTextNode(element[key]);
+                cell.appendChild(tableText);
+            }
+            }
+        };
+
+        const table = document.querySelector('table');
+        const data = Object.keys(mapData[0]);
+
+        generateTable(table, mapData);
+        generateTableHead(table, data);
+
+        const collapse = document.getElementsByClassName('collapseTableButton');
+        let i;
+
+        for (i = 0; i < collapse.length; i++) {
+            collapse[i].addEventListener('click', function () {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+
+            if (content.style.display === 'flex') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'flex';
+            }
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+            });
+        };
+
+        const constraints = {
+            name: {
+            presence: { allowEmpty: false }
+            },
+            email: {
+            presence: { allowEmpty: false },
+            email: true
+            },
+            subject: {
+            presence: { allowEmpty: false }
+            },
+            message: {
+            presence: { allowEmpty: false }
+            }
+        };
+
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function (event) {
+            const formValues = {
+            name: form.elements.name.value,
+            email: form.elements.email.value,
+            subject: form.elements.subject.value,
+            message: form.elements.message.value
+            };
+
+            const errors = validate(formValues, constraints);
+
+            if (errors) {
+            event.preventDefault();
+            const errorMessage = Object
+                .values(errors)
+                .map(function (fieldValues) {
+                return fieldValues.join(', ');
+                })
+                .join('\n');
+
+            alert(errorMessage);
+            }
+            // if no errors are returned, clear contact form
+            else {
+            document.getElementById('name').value = 'Name...';
+            document.getElementById('email').value = 'Email...';
+            document.getElementById('subject').value = 'Subject...';
+            document.getElementById('message').value = 'Message...';
+            alert('Message sent. We will respond shortly, thank you!');
+            }
+        }, false);
+    </script>
 
 </body>
 

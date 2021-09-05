@@ -9,7 +9,7 @@ module.exports = {
   mode:'production',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
-    './src/index.js',
+    './index.html',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -48,12 +48,6 @@ module.exports = {
             ]
           }
         },
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-
-        use: [ isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(ico|png|svg|jpg|jpeg)$/i,
