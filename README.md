@@ -1,19 +1,23 @@
 <p align="center"> <img src="src/assets/icons/readmeLogo.png" /> </p>
 
+<p align="center" style="font-weight: bold">
+  <a href="https://heltershelter.netlify.app">Visit Helter-Shelter Hosted on Netlify</a>
+</p>
+
 <p align="center" style="font-weight: bolder">
   <a href="https://github.com/soundwanders/helter-shelter/issues">Report Bug</a>
   &#8741;
   <a href="https://github.com/soundwanders/helter-shelter/issues">Request Feature</a>
 
-<div align="center"> 
+  <div align="center"> 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7a2ca23b-0fe6-4a24-8fce-e52cd745c819/deploy-status)](https://app.netlify.com/sites/heltershelter/deploys)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/7a2ca23b-0fe6-4a24-8fce-e52cd745c819/deploy-status)](https://app.netlify.com/sites/heltershelter/deploys)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-</div>
-
+  </div>
 </p>
+<br/>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -35,7 +39,7 @@
   - Table fields are populated by looping through an array of Objects and appending the data to display.
 - Page design achieved with CSS Flexbox with a focus on a mobile-friendly, responsive design.
   - Use of responsive values (such as % and em) to limit the amount of media queries required.
-- Lossless image compression thanks to <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
+- Lossless image compression to limit asset file size using <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
 - Bundled with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
 
 ### Technology
