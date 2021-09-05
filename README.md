@@ -1,7 +1,7 @@
 <p align="center"> <img src="src/assets/icons/readmeLogo.png" /> </p>
 
 <p align="center" style="font-weight: bold">
-  <a href="https://heltershelter.netlify.app">Visit Helter-Shelter Hosted on Netlify</a>
+  <a href="https://heltershelter.netlify.app">Visit Helter-Shelter</a>
 </p>
 
 <p align="center" style="font-weight: bolder">
