@@ -1,11 +1,13 @@
 <p align="center"> <img src="src/assets/icons/readmeLogo.png" /> </p>
 
-<p align="center">
+<p align="center" style="font-weight: bolder">
   <a href="https://github.com/soundwanders/helter-shelter/issues">Report Bug</a>
   &#8741;
   <a href="https://github.com/soundwanders/helter-shelter/issues">Request Feature</a>
 
 <div align="center"> 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7a2ca23b-0fe6-4a24-8fce-e52cd745c819/deploy-status)](https://app.netlify.com/sites/heltershelter/deploys)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
