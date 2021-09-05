@@ -1,4 +1,4 @@
-<p align="center"> <img src="media/icons/readmeLogo.png" /> </p>
+<p align="center"> <img src="src/assets/icons/readmeLogo.png" /> </p>
 
 <p align="center">
   <a href="https://github.com/soundwanders/helter-shelter/issues">Report Bug</a>
