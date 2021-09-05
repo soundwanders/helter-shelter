@@ -35,7 +35,7 @@
   - Table fields are populated by looping through an array of Objects and appending the data to display.
 - Page design achieved with CSS Flexbox with a focus on a mobile-friendly, responsive design.
   - Use of responsive values (such as % and em) to limit the amount of media queries required.
-- Lossless image compression thanks to <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
+- Lossless image compression to limit asset file size using <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
 - Bundled with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
 
 ### Technology
