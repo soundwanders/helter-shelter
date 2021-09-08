@@ -687,6 +687,10 @@ li.footerLink {
 
 /* wide range of devices -- Landscape mode mobile adjustments  */
 @media only screen and (max-height: 440px) and (min-width: 566px) and (orientation: landscape) and (pointer: coarse) {
+    .cardContainer {
+        padding: 3.5% 0;
+    }
+
     h2.cardTitle {
         font-size: 1.5em;
         line-height: 1.675em;
