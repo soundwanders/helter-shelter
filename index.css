@@ -584,6 +584,8 @@ li.footerLink {
         flex-direction: row;
         flex-grow: inherit;
         flex-wrap: wrap;
+        -webkit-box-shadow: 5px 6px 26px 3px rgba(5,5,5,0.05);
+        box-shadow: 5px 6px 26px 3px rgba(5,5,5,0.05);
     }
 
     h2.cardTitle {
@@ -685,10 +687,15 @@ li.footerLink {
     }
 }
 
-/* wide range of devices -- Landscape mode mobile adjustments  */
+/* Landscape mode mobile adjustments  */
 @media only screen and (max-height: 440px) and (min-width: 566px) and (orientation: landscape) and (pointer: coarse) {
     .cardContainer {
         padding: 3.5% 0;
+    }
+
+    .contentCard {
+        -webkit-box-shadow: 5px 5px 20px 3px rgba(5,5,5,0.05);
+        box-shadow: 5px 5px 20px 3px rgba(5,5,5,0.05);
     }
 
     h2.cardTitle {
