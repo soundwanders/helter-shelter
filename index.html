@@ -30,13 +30,14 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin="">
     </script>
-
 </head>
 
 <header>
     <div class="top-nav">
         <ul class="navbar">
-            <li class="navItem" id="navLogo"><img id="logoIcon" src="media/icons/navLogo.svg" alt="Helter-Shelter Logo"/></li>
+            <li class="navItem" id="navLogo">
+                <img id="logoIcon" src="media/icons/navLogo.svg" draggable="false" alt="Helter-Shelter Logo" aria-hidden="true"/>
+            </li>
             <li class="navItem" id="contactNav"><a href="#contact">Contact</a></li>
             <li class="navItem" id="shelterNav"><a href="#shelterMap">Shelter Map</a></li>
             <li class="navItem" id="aboutNav"><a href="#about">About</a></li>
@@ -55,7 +56,12 @@
         <div class="cardContainer">
             <div class="contentCard">           
                 <div class="cards-front" id="adopt">
-                    <img class="cardIcons" src="media/cards/baby.svg" alt="Baby Pet Image"/>
+                    <img class="cardIcons" 
+                    src="media/cards/baby.svg" 
+                    draggable="false" 
+                    alt="Baby Pet Image"
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -71,7 +77,12 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="medicine">
-                    <img class="cardIcons" src="media/cards/medicine.svg" alt="Medicine Image"/>
+                    <img class="cardIcons" 
+                    src="media/cards/medicine.svg" 
+                    draggable="false" 
+                    alt="Medicine Image"
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -87,7 +98,12 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="home">
-                    <img class="cardIcons" src="media/cards/home.svg" alt="Dog House Image"/>
+                    <img class="cardIcons" 
+                    src="media/cards/home.svg" 
+                    draggable="false" 
+                    alt="Dog House Image" 
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -103,7 +119,12 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="map">
-                    <img class="cardIcons" src="media/cards/map.svg" alt="Map Image"/>
+                    <img class="cardIcons" 
+                    src="media/cards/map.svg" 
+                    draggable="false" 
+                    alt="Map Image"
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -127,10 +148,12 @@
     </div>
 
         <div class="resetView">
-            <button id="resetButton" title="Click to reset map to initial view">Reset Map View</button>
+            <button id="resetButton" title="Click to reset map to initial view" aria-label="Click to reset the map to the initial state">
+            Reset Map View
+            </button>
         </div>
 
-<button class="collapseTableButton" title="Click to expand data table"></button>
+<button class="collapseTableButton" title="Click to expand data table" aria-label="Click to expand the shelter map data table"></button>
 
 <div class="dataTable">
     <table>
@@ -139,9 +162,8 @@
 </div>
 
 <div class="contactContainer">
-    <img src="media/paws-left.png" class="paws left" alt="Paws Decorative Image" style="float: left;">
-
-    <img src="media/paws-right.png" class="paws right" alt="Paws Decorative Image" style="float: right;">
+    <img src="media/paws-left.png" class="paws left" draggable="false" alt="Paws Decorative Image" style="float: left;" aria-hidden="true">
+    <img src="media/paws-right.png" class="paws right" draggable="false" alt="Paws Decorative Image" style="float: right;" aria-hidden="true">
 
     <div class="contactHeader" id="contact">
         <h2>Contact Us!</h2>
@@ -168,15 +190,30 @@
 
 <div class="carouselContainer">
     <ul class="gallery">
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/pink-dog.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/blue-dog.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/white-dog.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/yellow-dog.png"/></li>
-
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/pink-dog-2.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/blue-dog-2.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/white-dog-2.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="media/carousel/yellow-dog-2.png"/></li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/pink-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/blue-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/white-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/yellow-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/pink-dog-2.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/blue-dog-2.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/white-dog-2.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="media/carousel/yellow-dog-2.png"/>
+        </li>
     </ul>
 </div>
 
@@ -192,52 +229,81 @@
 <footer>
     <div class="helter-footer">
         <ul class="foot">
-            <li class="footerLink" id="helter footer"><a href="#navLogo">Home</a></li>
-            <li class="footerLink" id="about footer"><a href="#about">About</a></li>
-            <li class="footerLink" id="contact footer"><a href="#contact">Contact</a></li>
-            <li class="footerLink" id="resources"><a href="#resources">Resources</a></li>
-            <li class="footerLink" id="store"><a href="#shop">Sitemap</a></li>
+            <li class="footerLink" id="helter footer"><a href="#navLogo" aria-label="Return to top of Home page Anchor Link">Home</a></li>
+            <li class="footerLink" id="about footer"><a href="#about" aria-label="About section Anchor Link">About</a></li>
+            <li class="footerLink" id="contact footer"><a href="#contact" aria-label="Contact section Anchor Link">Contact</a></li>
+            <li class="footerLink" id="resources"><a href="#resources" aria-label="Resources demo link, inactive!">Resources</a></li>
+            <li class="footerLink" id="store"><a href="#sitemap" aria-label="Sitemap demo link, inactive!">Sitemap</a></li>
         </ul>
     </div>
 
     <div class="helter-footer row2">
         <ul class="foot">
-            <li class="footerLink" id="faq"><a href="#faq">FAQ</a></li>
-            <li class="footerLink" id="sponsors"><a href="#sponsors">Partners</a></li>
-            <li class="footerLink" id="terms"><a href="#user-terms">User Terms</a></li>
-            <li class="footerLink" id="privacy"><a href="#privacy-policy">Privacy Policy</a></li>
+            <li class="footerLink" id="faq">
+                <a href="#faq" aria-label="FAQ demo link, inactive!">FAQ</a>
+            </li>
+            <li class="footerLink" id="sponsors">
+                <a href="#sponsors" aria-label="Sponsors demo link, inactive!">Partners</a>
+            </li>
+            <li class="footerLink" id="terms">
+                <a href="#user-terms" aria-label="User Terms demo link, inactive!">User Terms</a>
+            </li>
+            <li class="footerLink" id="privacy">
+                <a href="#privacy-policy" aria-label="Privacy Policy demo link, inactive!">Privacy Policy</a>
+            </li>
         </ul>
     </div>
 
     <ul class="footerLogos">
         <li class="footerLink">
             <a href="https://www.facebook.com" link="noopener noreferral">
-                <img class="icons" src="media/icons/facebook.svg" alt="Facebook Logo Link" />
+                <img class="icons" 
+                src="media/icons/facebook.svg" 
+                draggable="false" 
+                alt="Facebook Logo Link" 
+                aria-label="Link to Facebook"
+                />
             </a>
         </li>
 
         <li class="footerLink">
-            <a href="https://github.com" link="noopener noreferral"> <img class="icons" src="media/icons/github.svg" id="github" 
-                style="background-color: #fff; border-radius: 8px;" alt="Github Logo Link" />
+            <a href="https://github.com" link="noopener noreferral">
+                <img class="icons" 
+                src="media/icons/github.svg" 
+                id="github" 
+                style="background-color: #fff; border-radius: 8px;" 
+                alt="Github Logo Link" 
+                aria-label="Link to Github"
+                />
             </a>
         </li>
 
         <li class="footerLink">
             <a href="https://www.instagram.com" link="noopener noreferral">
-                <img class="icons" src="media/icons/instagram.svg" alt="Instagram Logo Link" />
+                <img class="icons" 
+                src="media/icons/instagram.svg" 
+                draggable="false" 
+                alt="Instagram Logo Link"
+                aria-label="Link to Instagram"
+                />
             </a>
         </li>
 
         <li class="footerLink">
             <a href="https://twitter.com" link="noopener noreferral">
-                <img class="icons" src="media/icons/twitter.svg" alt="Twitter Logo Link" />
+                <img class="icons" 
+                src="media/icons/twitter.svg" 
+                draggable="false"
+                alt="Twitter Logo Link" 
+                aria-label="Link to Twitter"
+                />
             </a>
         </li>
     </ul>
     
     <ul>
         <li class="copyright">
-            &copy; <script>document.write(new Date().getFullYear())</script> All Rights Reserved
+            © <script> ; document.write(new Date().getFullYear()) </script> All Rights Reserved
         </li>
     </ul>
 </footer>
