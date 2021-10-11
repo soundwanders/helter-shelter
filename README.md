@@ -50,17 +50,12 @@
 │    └─── assets
 │    │    
 │    └─── webpack bundle
-│ 
 │    
-│    
-│    │
 └─── src
-     ├─── data
-     │    └── config
-     │
-     └─── hooks
-     │
-     └─── pages
+     ├─── assets
+          └── cards
+          └── carousel
+          └── icons
 
 ```
 
