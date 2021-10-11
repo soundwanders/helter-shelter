@@ -6,9 +6,9 @@
     <meta property="title" content="Helter-Shelter"/>
     <meta name="author" content="soundwanders"/>
     <meta name="description" content=
-    "Helter-Shelter is a site focusing on raising awareness and supporting 
-    animal shelters and rescue organizations throughout the state of New Hampshire." />
-    <meta name="keywords" content="animal, shelter, NH, new-hampshire, animals, pets, adoption, animal rescue, dogs, cats"/>
+        "Helter-Shelter is a site focusing on raising awareness and supporting 
+        animal shelters and rescue organizations throughout the state of New Hampshire." />
+    <meta name="keywords" content="animal, shelter, new-hampshire, pets, adoption, animal rescue, web-design, web-development"/>
     <meta name="theme-color" content="#d2d2ff">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -782,13 +782,13 @@
     }
 
     /* Card font size needs a little extra love to simulate responsive resizing */
-    @media (min-width: 1120px) and (max-width: 1310px) {
+    @media (min-width: 1100px) and (max-width: 1310px) {
         h2.cardTitle {
             font-size: 2.5em;
         }
     }
 
-    @media (min-width: 910px) and (max-width: 1080px) {
+    @media (min-width: 900px) and (max-width: 1080px) {
         .cardWrapper {
             min-height: 700px;
         }
@@ -810,7 +810,9 @@
 <header>
     <div class="top-nav">
         <ul class="navbar">
-            <li class="navItem" id="navLogo"><img id="logoIcon" src="./src/assets/icons/navLogo.svg" draggable="false" alt="Helter-Shelter Logo"/></li>
+            <li class="navItem" id="navLogo">
+                <img id="logoIcon" src="./src/assets/icons/navLogo.svg" draggable="false" alt="Helter-Shelter Logo" aria-hidden="true"/>
+            </li>
             <li class="navItem" id="contactNav"><a href="#contact">Contact</a></li>
             <li class="navItem" id="shelterNav"><a href="#shelterMap">Shelter Map</a></li>
             <li class="navItem" id="aboutNav"><a href="#about">About</a></li>
@@ -829,7 +831,12 @@
         <div class="cardContainer">
             <div class="contentCard">           
                 <div class="cards-front" id="adopt">
-                    <img class="cardIcons" src="./src/assets/cards/baby.svg" draggable="false" alt="Baby Pet Image"/>
+                    <img class="cardIcons" 
+                    src="./src/assets/cards/baby.svg" 
+                    draggable="false" 
+                    alt="Baby Pet Image"
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -845,7 +852,12 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="medicine">
-                    <img class="cardIcons" src="./src/assets/cards/medicine.svg" draggable="false" alt="Medicine Image"/>
+                    <img class="cardIcons" 
+                    src="./src/assets/cards/medicine.svg" 
+                    draggable="false" 
+                    alt="Medicine Image"
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -861,7 +873,12 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="home">
-                    <img class="cardIcons" src="./src/assets/cards/home.svg" draggable="false" alt="Dog House Image"/>
+                    <img class="cardIcons" 
+                    src="./src/assets/cards/home.svg" 
+                    draggable="false" 
+                    alt="Dog House Image" 
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -877,7 +894,12 @@
 
             <div class="contentCard">
                 <div class="cards-front" id="map">
-                    <img class="cardIcons" src="./src/assets/cards/map.svg" draggable="false" alt="Map Image"/>
+                    <img class="cardIcons" 
+                    src="./src/assets/cards/map.svg" 
+                    draggable="false" 
+                    alt="Map Image"
+                    aria-hidden="true"
+                    />
                 </div>
 
                 <div class="cards-back">
@@ -901,10 +923,12 @@
     </div>
 
         <div class="resetView">
-            <button id="resetButton" title="Click to reset map to initial view">Reset Map View</button>
+            <button id="resetButton" title="Click to reset map to initial view" aria-label="Click to reset the map to the initial state">
+            Reset Map View
+            </button>
         </div>
 
-<button class="collapseTableButton" title="Click to expand data table"></button>
+<button class="collapseTableButton" title="Click to expand data table" aria-label="Click to expand the shelter map data table"></button>
 
 <div class="dataTable">
     <table>
@@ -913,9 +937,8 @@
 </div>
 
 <div class="contactContainer">
-    <img src="./src/assets/paws-left.png" class="paws left" draggable="false" alt="Paws Decorative Image" style="float: left;">
-
-    <img src="./src/assets/paws-right.png" class="paws right" draggable="false" alt="Paws Decorative Image" style="float: right;">
+    <img src="./src/assets/paws-left.png" class="paws left" draggable="false" alt="Paws Decorative Image" style="float: left;" aria-hidden="true">
+    <img src="./src/assets/paws-right.png" class="paws right" draggable="false" alt="Paws Decorative Image" style="float: right;" aria-hidden="true">
 
     <div class="contactHeader" id="contact">
         <h2>Contact Us!</h2>
@@ -942,15 +965,30 @@
 
 <div class="carouselContainer">
     <ul class="gallery">
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/pink-dog.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/blue-dog.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/white-dog.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/yellow-dog.png"/></li>
-
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/pink-dog-2.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/blue-dog-2.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/white-dog-2.png"/></li>
-        <li class="carousel"><img class="carouselImage" draggable="false" src="./src/assets/carousel/yellow-dog-2.png"/></li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/pink-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/blue-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/white-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/yellow-dog.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/pink-dog-2.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/blue-dog-2.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/white-dog-2.png"/>
+        </li>
+        <li class="carousel">
+            <img class="carouselImage" draggable="false" aria-hidden="true" src="./src/assets/carousel/yellow-dog-2.png"/>
+        </li>
     </ul>
 </div>
 
@@ -1163,11 +1201,11 @@
         const generateTable = (table, data) => {
             for (const element of data) {
             const row = table.insertRow();
-            for (key in element) {
-                const cell = row.insertCell();
-                const tableText = document.createTextNode(element[key]);
-                cell.appendChild(tableText);
-            }
+                for (key in element) {
+                    const cell = row.insertCell();
+                    const tableText = document.createTextNode(element[key]);
+                    cell.appendChild(tableText);
+                }
             }
         };
 
@@ -1218,10 +1256,10 @@
 
         form.addEventListener('submit', function (event) {
             const formValues = {
-            name: form.elements.name.value,
-            email: form.elements.email.value,
-            subject: form.elements.subject.value,
-            message: form.elements.message.value
+                name: form.elements.name.value,
+                email: form.elements.email.value,
+                subject: form.elements.subject.value,
+                message: form.elements.message.value
             };
 
             const errors = validate(formValues, constraints);
@@ -1239,11 +1277,11 @@
             }
             // if no errors are returned, clear contact form
             else {
-            document.getElementById('name').value = 'Name...';
-            document.getElementById('email').value = 'Email...';
-            document.getElementById('subject').value = 'Subject...';
-            document.getElementById('message').value = 'Message...';
-            alert('Message sent. We will respond shortly, thank you!');
+                document.getElementById('name').value = 'Name...';
+                document.getElementById('email').value = 'Email...';
+                document.getElementById('subject').value = 'Subject...';
+                document.getElementById('message').value = 'Message...';
+                alert('Message sent. We will respond shortly, thank you!');
             }
         }, false);
     </script>
@@ -1253,45 +1291,74 @@
 <footer>
     <div class="helter-footer">
         <ul class="foot">
-            <li class="footerLink" id="helter footer"><a href="#navLogo">Home</a></li>
-            <li class="footerLink" id="about footer"><a href="#about">About</a></li>
-            <li class="footerLink" id="contact footer"><a href="#contact">Contact</a></li>
-            <li class="footerLink" id="resources"><a href="#resources">Resources</a></li>
-            <li class="footerLink" id="store"><a href="#shop">Sitemap</a></li>
+            <li class="footerLink" id="helter footer"><a href="#navLogo" aria-label="Return to top of Home page Anchor Link">Home</a></li>
+            <li class="footerLink" id="about footer"><a href="#about" aria-label="About section Anchor Link">About</a></li>
+            <li class="footerLink" id="contact footer"><a href="#contact" aria-label="Contact section Anchor Link">Contact</a></li>
+            <li class="footerLink" id="resources"><a href="#resources" aria-label="Resources demo link, inactive!">Resources</a></li>
+            <li class="footerLink" id="store"><a href="#sitemap" aria-label="Sitemap demo link, inactive!">Sitemap</a></li>
         </ul>
     </div>
 
     <div class="helter-footer row2">
         <ul class="foot">
-            <li class="footerLink" id="faq"><a href="#faq">FAQ</a></li>
-            <li class="footerLink" id="sponsors"><a href="#sponsors">Partners</a></li>
-            <li class="footerLink" id="terms"><a href="#user-terms">User Terms</a></li>
-            <li class="footerLink" id="privacy"><a href="#privacy-policy">Privacy Policy</a></li>
+            <li class="footerLink" id="faq">
+                <a href="#faq" aria-label="FAQ demo link, inactive!">FAQ</a>
+            </li>
+            <li class="footerLink" id="sponsors">
+                <a href="#sponsors" aria-label="Sponsors demo link, inactive!">Partners</a>
+            </li>
+            <li class="footerLink" id="terms">
+                <a href="#user-terms" aria-label="User Terms demo link, inactive!">User Terms</a>
+            </li>
+            <li class="footerLink" id="privacy">
+                <a href="#privacy-policy" aria-label="Privacy Policy demo link, inactive!">Privacy Policy</a>
+            </li>
         </ul>
     </div>
 
     <ul class="footerLogos">
         <li class="footerLink">
             <a href="https://www.facebook.com" link="noopener noreferral">
-                <img class="icons" src="./src/assets/icons/facebook.svg" draggable="false" alt="Facebook Logo Link" />
+                <img class="icons" 
+                src="./src/assets/icons/facebook.svg" 
+                draggable="false" 
+                alt="Facebook Logo Link" 
+                aria-label="Link to Facebook"
+                />
             </a>
         </li>
 
         <li class="footerLink">
-            <a href="https://github.com" link="noopener noreferral"> <img class="icons" src="./src/assets/icons/github.svg" id="github" 
-                style="background-color: #fff; border-radius: 8px;" alt="Github Logo Link" />
+            <a href="https://github.com" link="noopener noreferral">
+                <img class="icons" 
+                src="./src/assets/icons/github.svg" 
+                id="github" 
+                style="background-color: #fff; border-radius: 8px;" 
+                alt="Github Logo Link" 
+                aria-label="Link to Github"
+                />
             </a>
         </li>
 
         <li class="footerLink">
             <a href="https://www.instagram.com" link="noopener noreferral">
-                <img class="icons" src="./src/assets/icons/instagram.svg" draggable="false" alt="Instagram Logo Link" />
+                <img class="icons" 
+                src="./src/assets/icons/instagram.svg" 
+                draggable="false" 
+                alt="Instagram Logo Link"
+                aria-label="Link to Instagram"
+                />
             </a>
         </li>
 
         <li class="footerLink">
             <a href="https://twitter.com" link="noopener noreferral">
-                <img class="icons" src="./src/assets/icons/twitter.svg" draggable="false" alt="Twitter Logo Link" />
+                <img class="icons" 
+                src="./src/assets/icons/twitter.svg" 
+                draggable="false"
+                alt="Twitter Logo Link" 
+                aria-label="Link to Twitter"
+                />
             </a>
         </li>
     </ul>
