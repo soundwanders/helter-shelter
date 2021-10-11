@@ -54,7 +54,7 @@
 │    └─── webpack bundle
 │    
 └─── src
-     ├─── assets
+     └─── assets
           └── cards
           └── carousel
           └── icons
