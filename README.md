@@ -40,7 +40,7 @@
 - Lossless image compression to limit asset file size using <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
 - Bundled with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
 
-### 🌳 Project Structure
+### Project Structure
 
 ```bash
 
@@ -52,7 +52,7 @@
 │    └─── webpack bundle
 │    
 └─── src
-     ├─── assets
+     └─── assets
           └── cards
           └── carousel
           └── icons
