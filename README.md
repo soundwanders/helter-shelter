@@ -35,7 +35,7 @@
 ### About Helter-Shelter
 
 - Helter-Shelter is a site supporting and raising awareness for New Hampshire animal shelters and rescue organizations.
-- Click each pinned location pn the Leaflet Map to reveal each organization's name and location.
+- Click each pinned location on the Leaflet Map to reveal each organization's name and location.
 - Collapsible data table generated with JavaScript, just click the '+' button to expand the table.
   - Table fields are populated by looping through an array of Objects and appending data to display.
 - Layout achieved with CSS Flexbox with a focus on a mobile-friendly, responsive design.
