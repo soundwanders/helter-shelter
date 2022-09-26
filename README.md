@@ -1,15 +1,11 @@
 <p align="center"> <img src="media/icons/readmeLogo.png" /> </p>
 
 <p align="center" style="font-weight: bold">
-  <a href="https://heltershelter.netlify.app">On Netlify</a>
+  <a href="https://heltershelter.netlify.app">View on Netlify</a>
   &#8741;
-  <a href="https://soundwanders.github.io/helter-shelter">On Github Pages</a>
+  <a href="https://soundwanders.github.io/helter-shelter">View Github Pages</a>
 </p>
 
-<p align="center" style="font-weight: bolder">
-  <a href="https://github.com/soundwanders/helter-shelter/issues">Report Bug</a>
-  &#8741;
-  <a href="https://github.com/soundwanders/helter-shelter/issues">Request Feature</a>
 
   <div align="center"> 
 
@@ -34,10 +30,10 @@
 
 ### About Helter-Shelter
 
-- Helter-Shelter is a site supporting and raising awareness for New Hampshire animal shelters and rescue organizations.
-- Click each pinned location on the Leaflet Map to reveal each organization's name and location.
+- Helter-Shelter focuses on showcasing New Hampshire animal shelters and rescue organizations.
+- Click each pinned location on the [Leaflet](https://leafletjs.com/) map to reveal each organization's name and location.
 - Collapsible data table generated with JavaScript, just click the '+' button to expand the table.
-  - Table fields are populated by looping through an array of Objects and appending data to display.
+- Table fields populated by looping through an array of Objects and appending data to display.
 - Layout achieved with CSS Flexbox with a focus on a mobile-friendly, responsive design.
 - Lossless image compression to limit asset file size using <a href="https://kraken.io/web-interface" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://kraken.io">Kraken.io</a>
 - Bundled with <a href="https://webpack.js.org/guides/getting-started/" style="text-decoration: none; font-weight: bold; letter-spacing: 0.25px;" title="Link redirects to https://webpack.js.org">Webpack</a>
@@ -65,10 +61,8 @@
 - HTML, CSS, JavaScript, Leaflet.js, Webpack
 
 <code>Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. 
-Weighing just about 39 KB of JS, it has all the mapping features most developers ever need. 
-Leaflet is designed with simplicity, performance and usability in mind. It works efficiently across 
-all major desktop and mobile platforms, can be extended with lots of plugins, has a beautiful, easy to 
-use and well-documented API and a simple, readable source code that is a joy to contribute to.</code>
+Weighing just about 39 KB of JS, it is designed with simplicity, performance and usability in mind. It works efficiently across 
+all modern platforms, can be extended with plugins, and has a well-documented API.</code>
 <br/>
 
 ### Contributing
